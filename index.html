@@ -1,0 +1,1308 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>เลขยกกำลัง | แบบทดสอบก่อนเรียน–หลังเรียน ระดับมัธยมศึกษาตอนต้น</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@500;600;700&family=Sarabun:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* ===================== THEME / 3D STYLE ===================== */
+:root{
+  --blue:#2563eb; --blue-d:#1741a6;
+  --violet:#7c3aed; --violet-d:#55199f;
+  --teal:#0d9488; --teal-d:#0b6b62;
+  --orange:#ea580c; --orange-d:#9a3412;
+  --amber:#f59e0b; --amber-d:#b26905;
+  --green:#16a34a; --green-d:#0f7034;
+  --rose:#e11d48; --rose-d:#9f1239;
+  --ink:#131029; --muted:#5b6478;
+  --paper:#ffffff; --line:#dcdff0;
+  --r:22px;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0}
+body{
+  font-family:'Sarabun',system-ui,sans-serif; color:var(--ink);
+  background:
+    radial-gradient(1100px 620px at 8% -10%, #c2410c 0%, transparent 58%),
+    radial-gradient(950px 620px at 106% 6%, #6d28d9 0%, transparent 58%),
+    linear-gradient(160deg,#170f36 0%,#2e1065 45%,#12275c 100%);
+  background-attachment:fixed; min-height:100vh; padding:16px;
+}
+h1,h2,h3,h4,.f-k{font-family:'Kanit',sans-serif;margin:0}
+.wrap{max-width:1060px;margin:0 auto}
+
+.card{
+  background:var(--paper); border-radius:var(--r);
+  border:1px solid #fff; padding:22px;
+  box-shadow:0 2px 0 #cbd1ea, 0 10px 0 #adb5d9, 0 26px 44px rgba(5,4,32,.5);
+  transform:perspective(1200px) rotateX(.4deg);
+}
+.card+.card{margin-top:18px}
+
+.btn{
+  font-family:'Kanit',sans-serif; font-weight:600; font-size:17px;
+  color:#fff; border:none; cursor:pointer; padding:14px 22px; border-radius:16px;
+  background:linear-gradient(180deg,#5b8cff,#2563eb); box-shadow:0 6px 0 var(--blue-d),0 12px 20px rgba(0,0,0,.28);
+  transition:transform .08s ease, box-shadow .08s ease; display:inline-flex; gap:8px; align-items:center; justify-content:center;
+}
+.btn:active{transform:translateY(5px); box-shadow:0 1px 0 var(--blue-d),0 4px 10px rgba(0,0,0,.25)}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.btn.violet{background:linear-gradient(180deg,#a78bfa,#7c3aed);box-shadow:0 6px 0 var(--violet-d),0 12px 20px rgba(0,0,0,.28)}
+.btn.violet:active{box-shadow:0 1px 0 var(--violet-d)}
+.btn.teal{background:linear-gradient(180deg,#2dd4bf,#0d9488);box-shadow:0 6px 0 var(--teal-d),0 12px 20px rgba(0,0,0,.28)}
+.btn.teal:active{box-shadow:0 1px 0 var(--teal-d)}
+.btn.amber{background:linear-gradient(180deg,#fcd34d,#f59e0b);box-shadow:0 6px 0 var(--amber-d),0 12px 20px rgba(0,0,0,.28);color:#3a2503}
+.btn.amber:active{box-shadow:0 1px 0 var(--amber-d)}
+.btn.green{background:linear-gradient(180deg,#4ade80,#16a34a);box-shadow:0 6px 0 var(--green-d),0 12px 20px rgba(0,0,0,.28)}
+.btn.green:active{box-shadow:0 1px 0 var(--green-d)}
+.btn.rose{background:linear-gradient(180deg,#fb7185,#e11d48);box-shadow:0 6px 0 var(--rose-d),0 12px 20px rgba(0,0,0,.28)}
+.btn.rose:active{box-shadow:0 1px 0 var(--rose-d)}
+.btn.ghost{background:linear-gradient(180deg,#f1f5f9,#dbe2f0);color:#25304a;box-shadow:0 6px 0 #a9b4cc,0 12px 20px rgba(0,0,0,.2)}
+.btn.ghost:active{box-shadow:0 1px 0 #a9b4cc}
+.btn.sm{font-size:14px;padding:9px 14px;border-radius:12px;box-shadow:0 4px 0 rgba(0,0,0,.28)}
+
+/* ---------- ตัวเรนเดอร์สัญลักษณ์คณิตศาสตร์ ---------- */
+sup.ex{font-size:.70em;vertical-align:super;line-height:0;font-weight:700;padding:0 1px;letter-spacing:.3px}
+.fr{display:inline-flex;flex-direction:column;vertical-align:-0.45em;text-align:center;margin:0 4px;line-height:1.2;font-size:.94em}
+.fr>.nu{border-bottom:2.2px solid currentColor;padding:0 5px 1px}
+.fr>.de{padding:1px 5px 0}
+.rt{display:inline-flex;align-items:flex-start;white-space:nowrap;margin:0 1px}
+.rt>.rs{font-size:1.28em;line-height:.95;font-weight:600}
+.rt>.rd{border-top:2.2px solid currentColor;padding:2px 5px 0 2px;margin-left:-3px;line-height:1.25}
+
+.hero{text-align:center;color:#fff;padding:10px 0 18px;text-shadow:0 3px 0 rgba(0,0,0,.35),0 8px 24px rgba(0,0,0,.5)}
+.hero h1{font-size:clamp(25px,4.8vw,42px);letter-spacing:.3px}
+.hero p{margin:8px 0 0;opacity:.92;font-size:16px}
+.badge{display:inline-block;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);
+  padding:6px 14px;border-radius:999px;font-size:14px;color:#fff;backdrop-filter:blur(4px);margin:4px 4px 0}
+
+.screen{display:none;animation:pop .28s ease}
+.screen.active{display:block}
+@keyframes pop{from{opacity:0;transform:translateY(14px) scale(.985)}to{opacity:1;transform:none}}
+
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:780px){.grid2,.grid3{grid-template-columns:1fr}}
+
+.tile{border-radius:20px;padding:20px;color:#fff;cursor:pointer;border:none;text-align:left;
+  transition:transform .12s ease; font-family:'Kanit',sans-serif}
+.tile:hover{transform:translateY(-4px)}
+.tile.pre{background:linear-gradient(160deg,#60a5fa,#2563eb);box-shadow:0 8px 0 var(--blue-d),0 18px 30px rgba(0,0,0,.3)}
+.tile.post{background:linear-gradient(160deg,#fb923c,#ea580c);box-shadow:0 8px 0 var(--orange-d),0 18px 30px rgba(0,0,0,.3)}
+.tile b{display:block;font-size:22px;margin-bottom:4px}
+.tile span{font-size:14px;opacity:.95;font-family:'Sarabun',sans-serif}
+
+.review{background:linear-gradient(160deg,#fff7ed,#ffedd5);border:2px dashed #fb923c;border-radius:18px;padding:16px}
+.review h3{color:#9a3412;font-size:18px;margin-bottom:8px}
+.review ul{margin:6px 0 0;padding-left:20px;line-height:2.1}
+.chip{display:inline-block;background:#fff;border:1.5px solid #fdba74;border-radius:10px;padding:3px 10px;margin:3px;font-weight:600}
+
+label.fl{display:block;font-weight:600;margin:12px 0 6px;font-size:15px}
+input[type=text],select{width:100%;padding:13px 14px;border-radius:14px;border:2px solid var(--line);font-size:17px;
+  font-family:'Sarabun',sans-serif;background:#f8fafc;box-shadow:inset 0 3px 6px rgba(15,23,42,.08)}
+input:focus,select:focus{outline:none;border-color:var(--blue);background:#fff}
+.switch{display:flex;align-items:center;gap:12px;background:#f1f5f9;border:2px solid var(--line);border-radius:16px;padding:12px 14px;margin-top:12px;cursor:pointer}
+.switch input{width:22px;height:22px;accent-color:var(--violet)}
+
+.hud{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;
+  background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);border-radius:18px;padding:12px 16px;color:#fff;margin-bottom:14px;backdrop-filter:blur(6px)}
+.hud .g{display:flex;gap:8px;align-items:center;font-family:'Kanit',sans-serif;font-size:15px}
+.heart{font-size:22px;filter:drop-shadow(0 3px 2px rgba(0,0,0,.45))}
+.heart.off{filter:grayscale(1);opacity:.35}
+.bar{height:14px;background:rgba(255,255,255,.25);border-radius:999px;overflow:hidden;margin-top:10px;box-shadow:inset 0 2px 5px rgba(0,0,0,.3)}
+.bar>i{display:block;height:100%;background:linear-gradient(90deg,#fde047,#22c55e);border-radius:999px;transition:width .35s ease}
+
+.lvtag{display:inline-block;color:#fff;border-radius:999px;padding:6px 16px;font-family:'Kanit',sans-serif;font-size:14px;box-shadow:0 4px 0 rgba(0,0,0,.25)}
+.story{background:linear-gradient(160deg,#eff6ff,#dbeafe);border-left:8px solid var(--blue);border-radius:14px;padding:14px 16px;margin-bottom:14px;font-size:17px;line-height:2}
+.qtext{font-family:'Kanit',sans-serif;font-size:clamp(20px,3.1vw,26px);line-height:1.95;margin:6px 0 18px}
+
+.choices{display:grid;gap:12px}
+.ch{display:flex;align-items:center;gap:14px;text-align:left;width:100%;cursor:pointer;
+  background:linear-gradient(180deg,#ffffff,#eef2fb);border:2px solid #cfd8ee;border-radius:18px;padding:14px 16px;
+  font-size:20px;font-family:'Sarabun',sans-serif;font-weight:600;color:var(--ink);line-height:1.8;
+  box-shadow:0 5px 0 #b9c3df,0 10px 18px rgba(0,0,0,.14); transition:transform .1s,box-shadow .1s,background .2s}
+.ch:hover:not(:disabled){transform:translateY(-3px);box-shadow:0 8px 0 #b9c3df,0 14px 22px rgba(0,0,0,.18)}
+.ch:active:not(:disabled){transform:translateY(3px);box-shadow:0 2px 0 #b9c3df}
+.ch .k{flex:none;width:42px;height:42px;border-radius:12px;display:grid;place-items:center;color:#fff;font-family:'Kanit',sans-serif;font-size:19px;
+  background:linear-gradient(180deg,#8b9dc9,#5b6f9e);box-shadow:0 3px 0 #3f4f75}
+.ch.correct{background:linear-gradient(180deg,#dcfce7,#bbf7d0);border-color:#22c55e;box-shadow:0 5px 0 #15803d}
+.ch.correct .k{background:linear-gradient(180deg,#4ade80,#16a34a);box-shadow:0 3px 0 #0f5f2c}
+.ch.wrong{background:linear-gradient(180deg,#ffe4e6,#fecdd3);border-color:#f43f5e;box-shadow:0 5px 0 #9f1239}
+.ch.wrong .k{background:linear-gradient(180deg,#fb7185,#e11d48);box-shadow:0 3px 0 #881337}
+.ch:disabled{cursor:default}
+
+.fb{margin-top:16px;border-radius:18px;padding:16px;font-size:17px;line-height:1.95;display:none}
+.fb.show{display:block;animation:pop .25s ease}
+.fb.ok{background:linear-gradient(160deg,#ecfdf5,#d1fae5);border:2px solid #34d399}
+.fb.no{background:linear-gradient(160deg,#fff1f2,#ffe4e6);border:2px solid #fb7185}
+.fb b{font-family:'Kanit',sans-serif;font-size:19px;display:block;margin-bottom:6px}
+.hintbox{margin-top:12px;background:linear-gradient(160deg,#fefce8,#fef9c3);border:2px dashed #eab308;border-radius:16px;padding:14px;display:none;font-size:16px;line-height:1.9}
+.hintbox.show{display:block}
+
+table{width:100%;border-collapse:collapse;font-size:15px}
+th,td{border:1px solid var(--line);padding:9px 10px;text-align:center;vertical-align:middle}
+th{background:linear-gradient(180deg,#eef2ff,#e0e7ff);font-family:'Kanit',sans-serif;font-weight:600}
+td.l{text-align:left}
+tr:nth-child(even) td{background:#fafbff}
+.tw{overflow-x:auto;border-radius:14px}
+.ok-t{color:#15803d;font-weight:700}
+.no-t{color:#be123c;font-weight:700}
+
+.score-ring{width:190px;height:190px;border-radius:50%;margin:0 auto;display:grid;place-items:center;
+  box-shadow:0 12px 0 rgba(0,0,0,.18),0 24px 40px rgba(0,0,0,.3),inset 0 -10px 22px rgba(0,0,0,.14)}
+.score-ring .v{font-family:'Kanit',sans-serif;font-size:46px;color:#fff;line-height:1;text-shadow:0 3px 0 rgba(0,0,0,.28)}
+.score-ring .s{color:#fff;font-size:15px;opacity:.95}
+.kpi{background:linear-gradient(180deg,#fff,#eef2fb);border:2px solid var(--line);border-radius:16px;padding:14px;text-align:center;box-shadow:0 5px 0 #c3cce6}
+.kpi b{display:block;font-family:'Kanit',sans-serif;font-size:26px;color:var(--blue)}
+.kpi span{font-size:13px;color:var(--muted)}
+
+.note{font-size:14px;color:var(--muted);line-height:1.85}
+.sep{height:1px;background:var(--line);margin:18px 0}
+.row{display:flex;flex-wrap:wrap;gap:10px}
+.center{text-align:center}
+.mt{margin-top:16px}
+
+/* ===================== ใบงาน / การพิมพ์ ===================== */
+#sheet{background:#fff;color:#000;font-size:15.5px}
+#sheet .ws-head{text-align:center;border-bottom:3px double #000;padding-bottom:8px;margin-bottom:14px}
+#sheet .ws-head h2{font-size:21px}
+#sheet .ws-meta{display:flex;justify-content:space-between;font-size:14.5px;margin:10px 0 16px;gap:10px;flex-wrap:wrap}
+#sheet .wq{margin:0 0 13px;line-height:2.15;break-inside:avoid;page-break-inside:avoid}
+#sheet .wq .num{font-family:'Kanit',sans-serif;font-weight:700}
+#sheet .wopt{display:grid;grid-template-columns:repeat(4,1fr);gap:4px 10px;margin-top:3px;padding-left:22px}
+#sheet .wstory{background:#f3f4f6;border-left:4px solid #555;padding:6px 10px;margin:4px 0 4px 22px;border-radius:6px}
+#sheet .keytbl td,#sheet .keytbl th{padding:5px;font-size:14px}
+.pagebreak{page-break-before:always;break-before:page}
+
+@page{size:A4;margin:14mm}
+@media print{
+  body{background:#fff !important;padding:0}
+  .screen{display:none !important}
+  .screen.active{display:block !important}
+  .no-print{display:none !important}
+  .card{box-shadow:none;border:none;transform:none;padding:0}
+  .hero{display:none}
+  th{background:#e9ecf5 !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .score-ring{box-shadow:none;border:3px solid #333}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="hero no-print" id="hero">
+    <h1>a<sup class="ex">n</sup> เลขยกกำลัง (Exponents)</h1>
+    <p>แบบทดสอบก่อนเรียน–หลังเรียนแบบคู่ขนาน (Parallel Form) · ระดับชั้นมัธยมศึกษาตอนต้น</p>
+    <div>
+      <span class="badge">ค่าไม่เกิน 1000</span>
+      <span class="badge">ชุดละ 25 ข้อ</span>
+      <span class="badge">หัวใจ 5 ดวง</span>
+      <span class="badge">มีใบงาน PDF</span>
+    </div>
+  </div>
+
+  <!-- ===================== หน้าแรก ===================== -->
+  <section class="screen active" id="scr-home">
+    <div class="card">
+      <h2 style="color:#1e3a8a">เลือกชุดแบบทดสอบ</h2>
+      <p class="note">ทั้งสองชุดวัดสาระเดียวกันและมีระดับความยากเท่ากัน ต่างเฉพาะตัวเลขและบริบท (ข้อที่ 1 ของชุดก่อนเรียน คู่ขนานกับข้อที่ 1 ของชุดหลังเรียน)</p>
+      <div class="grid2 mt">
+        <button class="tile pre" onclick="goSetup('pre')">
+          <b>แบบทดสอบก่อนเรียน</b>
+          <span>Pre-test · 25 ข้อ · วัดความรู้พื้นฐานก่อนจัดการเรียนรู้</span>
+        </button>
+        <button class="tile post" onclick="goSetup('post')">
+          <b>แบบทดสอบหลังเรียน</b>
+          <span>Post-test · 25 ข้อ · วัดผลสัมฤทธิ์หลังจัดการเรียนรู้</span>
+        </button>
+      </div>
+      <div class="sep"></div>
+      <div class="row">
+        <button class="btn amber" onclick="openSheet()">📄 โหมดใบงาน PDF (สำหรับพิมพ์)</button>
+        <button class="btn violet" onclick="openTeacher()">👩‍🏫 ห้องครู · สรุปคะแนนรายบุคคล</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="review">
+        <h3>ทบทวนก่อนลงสนาม — มโนทัศน์หลักที่ต้องใช้</h3>
+
+        <b style="color:#9a3412">1) บทนิยามของเลขยกกำลัง</b>
+        <ul>
+          <li>a<sup class="ex">n</sup> = a × a × a × … × a (มี a เป็นตัวประกอบ n ตัว) เมื่อ n เป็นจำนวนเต็มบวก</li>
+          <li>เรียก <b>a</b> ว่า <b>ฐาน</b> และเรียก <b>n</b> ว่า <b>เลขชี้กำลัง</b> เช่น 2<sup class="ex">5</sup> = 32</li>
+          <li><span class="chip">a<sup class="ex">0</sup> = 1</span> เมื่อ a ≠ 0 &nbsp;&nbsp; <span class="chip">a<sup class="ex">−n</sup> = 1/a<sup class="ex">n</sup></span> เมื่อ a ≠ 0</li>
+        </ul>
+
+        <b style="color:#9a3412;display:block;margin-top:10px">2) สมบัติของเลขยกกำลัง (a ≠ 0, b ≠ 0)</b>
+        <ul>
+          <li><span class="chip">a<sup class="ex">m</sup> × a<sup class="ex">n</sup> = a<sup class="ex">m+n</sup></span> ฐานเดียวกันคูณกัน ให้บวกเลขชี้กำลัง</li>
+          <li><span class="chip">a<sup class="ex">m</sup> ÷ a<sup class="ex">n</sup> = a<sup class="ex">m−n</sup></span> ฐานเดียวกันหารกัน ให้ลบเลขชี้กำลัง</li>
+          <li><span class="chip">(a<sup class="ex">m</sup>)<sup class="ex">n</sup> = a<sup class="ex">m×n</sup></span> กำลังของกำลัง ให้คูณเลขชี้กำลัง</li>
+          <li><span class="chip">(a × b)<sup class="ex">n</sup> = a<sup class="ex">n</sup> × b<sup class="ex">n</sup></span> &nbsp; <span class="chip">(a ÷ b)<sup class="ex">n</sup> = a<sup class="ex">n</sup> ÷ b<sup class="ex">n</sup></span></li>
+        </ul>
+
+        <b style="color:#9a3412;display:block;margin-top:10px">3) การบวกและการลบเลขยกกำลัง</b>
+        <ul>
+          <li>การบวกและการลบ <b>ไม่มี</b> สมบัติแบบการคูณและการหาร ต้องหาค่าของแต่ละพจน์ก่อนเสมอ</li>
+          <li>เช่น 3<sup class="ex">2</sup> + 3<sup class="ex">3</sup> = 9 + 27 = 36 ซึ่ง <b>ไม่เท่ากับ</b> 3<sup class="ex">5</sup> = 243</li>
+          <li>ถ้าฐานและเลขชี้กำลังเหมือนกัน รวมสัมประสิทธิ์ได้ เช่น 5 × 2<sup class="ex">3</sup> + 3 × 2<sup class="ex">3</sup> = 8 × 2<sup class="ex">3</sup> = 64</li>
+        </ul>
+
+        <b style="color:#9a3412;display:block;margin-top:10px">4) ตารางค่าเลขยกกำลังที่ควรจำ (ค่าไม่เกิน 1000)</b>
+        <div class="tw" style="margin-top:6px">
+          <table>
+            <tr><th>ฐาน</th><th>n = 1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th></tr>
+            <tr><td><b>2</b></td><td>2</td><td>4</td><td>8</td><td>16</td><td>32</td><td>64</td></tr>
+            <tr><td><b>3</b></td><td>3</td><td>9</td><td>27</td><td>81</td><td>243</td><td>729</td></tr>
+            <tr><td><b>5</b></td><td>5</td><td>25</td><td>125</td><td>625</td><td>–</td><td>–</td></tr>
+            <tr><td><b>10</b></td><td>10</td><td>100</td><td>1000</td><td>–</td><td>–</td><td>–</td></tr>
+          </table>
+        </div>
+        <p class="note" style="margin-top:8px;color:#7c2d12">เพิ่มเติม : 2<sup class="ex">7</sup> = 128 , 2<sup class="ex">8</sup> = 256 , 2<sup class="ex">9</sup> = 512 , 6<sup class="ex">3</sup> = 216 , 7<sup class="ex">3</sup> = 343 , 8<sup class="ex">3</sup> = 512 , 9<sup class="ex">3</sup> = 729</p>
+        <p class="note" style="color:#7c2d12"><b>ข้อควรระวัง :</b> −2<sup class="ex">4</sup> = −16 แต่ (−2)<sup class="ex">4</sup> = 16 เพราะวงเล็บเป็นตัวกำหนดว่าเครื่องหมายลบเป็นส่วนหนึ่งของฐานหรือไม่</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== หน้าลงทะเบียน ===================== -->
+  <section class="screen" id="scr-setup">
+    <div class="card">
+      <h2 id="setupTitle" style="color:#1e3a8a">ลงทะเบียนก่อนทำแบบทดสอบ</h2>
+      <p class="note">ข้อมูลนี้ถูกบันทึกไว้ในเครื่องนี้เท่านั้น เพื่อให้ครูเรียกดูคะแนนรายบุคคลได้</p>
+      <div class="grid2">
+        <div><label class="fl">ชื่อ – นามสกุล</label><input type="text" id="inName" placeholder="เช่น เด็กชายกิตติภพ ตั้งใจเรียน"></div>
+        <div><label class="fl">เลขที่</label><input type="text" id="inNo" placeholder="เช่น 15"></div>
+      </div>
+      <label class="fl">ชั้น / ห้อง</label>
+      <input type="text" id="inRoom" placeholder="เช่น ม.2/1">
+
+      <label class="switch" for="inType">
+        <input type="checkbox" id="inType">
+        <span><b>โหมดพิมพ์คำตอบเอง (สำหรับผู้เรียนที่พร้อมท้าทาย)</b><br>
+        <span class="note">ข้อที่คำนวณได้เป็นค่าเดียว จะให้พิมพ์คำตอบเอง เช่น 32 หรือ 2^5 หรือ 1/8 ส่วนข้อเชิงมโนทัศน์ยังคงเป็นแบบเลือกตอบ</span></span>
+      </label>
+
+      <div class="row mt">
+        <button class="btn green" onclick="startGame()">▶ เริ่มทำแบบทดสอบ</button>
+        <button class="btn ghost" onclick="show('scr-home')">← ย้อนกลับ</button>
+      </div>
+      <p class="note mt">ระบบให้ <b>หัวใจ 5 ดวง</b> ตอบผิดเสียหัวใจ 1 ดวง หากหัวใจหมดสามารถ “เติมหัวใจแล้วทำต่อ” ได้ ข้อสอบจะไม่ถูกตัดจบ</p>
+    </div>
+  </section>
+
+  <!-- ===================== หน้าเล่น ===================== -->
+  <section class="screen" id="scr-game">
+    <div class="hud no-print">
+      <div class="g" id="hudLevel">ด่าน 1</div>
+      <div class="g" id="hudHearts"></div>
+      <div class="g" id="hudScore">คะแนน 0</div>
+      <div class="g" id="hudProgress">ข้อ 1 / 25</div>
+      <div style="width:100%"><div class="bar"><i id="hudBar" style="width:0%"></i></div></div>
+    </div>
+    <div class="card">
+      <div id="qLevelTag"></div>
+      <div id="qStory"></div>
+      <div class="qtext" id="qText"></div>
+      <div class="choices" id="qChoices"></div>
+      <div id="qTyped" style="display:none">
+        <label class="fl">พิมพ์คำตอบของคุณ</label>
+        <input type="text" id="typedInput" placeholder="เช่น 32 หรือ 2^5 หรือ 1/8" autocomplete="off">
+        <p class="note">พิมพ์เลขยกกำลังด้วยเครื่องหมาย ^ เช่น 2^5 · พิมพ์เศษส่วนด้วย / เช่น 1/8 · ใช้เครื่องหมายลบนำหน้าได้ เช่น -16</p>
+        <button class="btn green mt" id="typedBtn" onclick="submitTyped()">ส่งคำตอบ</button>
+      </div>
+      <div class="hintbox" id="qHint"></div>
+      <div class="fb" id="qFb"></div>
+      <div class="row mt">
+        <button class="btn amber sm" id="btnHint" onclick="useHint()">💡 ขอคำใบ้</button>
+        <button class="btn sm" id="btnNext" style="display:none" onclick="nextQuestion()">ข้อต่อไป →</button>
+        <button class="btn ghost sm" onclick="quitConfirm()">ออกจากแบบทดสอบ</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ผ่านด่าน ===================== -->
+  <section class="screen" id="scr-levelup">
+    <div class="card center">
+      <div style="font-size:70px;line-height:1">🏅</div>
+      <h2 id="luTitle" style="color:#15803d">ผ่านด่านแล้ว!</h2>
+      <p id="luDetail" class="note" style="font-size:16px"></p>
+      <button class="btn green mt" onclick="continueNext()">ไปด่านต่อไป →</button>
+    </div>
+  </section>
+
+  <!-- ===================== หัวใจหมด ===================== -->
+  <section class="screen" id="scr-over">
+    <div class="card center">
+      <div style="font-size:70px;line-height:1">💔</div>
+      <h2 style="color:#be123c">หัวใจหมดแล้ว</h2>
+      <p class="note" style="font-size:16px">ไม่เป็นไรเลย ความผิดพลาดคือข้อมูลสำคัญของการเรียนรู้ เลือกได้ว่าจะเติมหัวใจแล้วทำต่อจนครบ หรือหยุดเพื่อดูผลคะแนน</p>
+      <div class="row mt" style="justify-content:center">
+        <button class="btn green" onclick="refillHearts()">❤️ เติมหัวใจ +3 แล้วทำต่อ</button>
+        <button class="btn ghost" onclick="finishTest()">ดูผลคะแนน</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ผลคะแนนรายบุคคล ===================== -->
+  <section class="screen" id="scr-result">
+    <div class="card" id="resultCard"></div>
+    <div class="card no-print">
+      <div class="row">
+        <button class="btn amber" onclick="window.print()">🖨 พิมพ์ / บันทึกเป็น PDF</button>
+        <button class="btn" onclick="goSetup(state.mode)">🔁 ทำชุดนี้อีกครั้ง</button>
+        <button class="btn violet" onclick="openTeacher()">👩‍🏫 ห้องครู</button>
+        <button class="btn ghost" onclick="show('scr-home')">🏠 หน้าแรก</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ห้องครู ===================== -->
+  <section class="screen" id="scr-teacher">
+    <div class="card" id="pinCard">
+      <h2 style="color:#5b21b6">🔐 ห้องครู</h2>
+      <label class="fl">กรอกรหัสผ่านครู</label>
+      <input type="text" id="pinInput" placeholder="รหัสเริ่มต้นคือ 1234">
+      <div class="row mt">
+        <button class="btn violet" onclick="checkPin()">เข้าสู่ห้องครู</button>
+        <button class="btn ghost" onclick="show('scr-home')">← กลับหน้าแรก</button>
+      </div>
+    </div>
+    <div id="teacherBody" style="display:none"></div>
+  </section>
+
+  <!-- ===================== ใบงาน PDF ===================== -->
+  <section class="screen" id="scr-print">
+    <div class="card no-print">
+      <h2 style="color:#b45309">📄 โหมดใบงาน PDF</h2>
+      <p class="note">สร้างใบงานสำหรับพิมพ์ควบคู่กับเกม เหมาะกับการทำในชั้นเรียนหรือมอบหมายเป็นการบ้าน (สั่งพิมพ์แล้วเลือกปลายทางเป็น “บันทึกเป็น PDF”)</p>
+      <div class="grid3 mt">
+        <div>
+          <label class="fl">ชุดข้อสอบ</label>
+          <select id="wsSet">
+            <option value="pre">ชุดก่อนเรียน (25 ข้อ)</option>
+            <option value="post">ชุดหลังเรียน (25 ข้อ)</option>
+            <option value="both">ทั้งสองชุด (50 ข้อ)</option>
+          </select>
+        </div>
+        <div>
+          <label class="fl">เฉลยและแนวคิด</label>
+          <select id="wsKey">
+            <option value="no">ไม่แสดง (ฉบับนักเรียน)</option>
+            <option value="yes">แสดงท้ายใบงาน (ฉบับครู)</option>
+          </select>
+        </div>
+        <div>
+          <label class="fl">กระดาษคำตอบ</label>
+          <select id="wsCard">
+            <option value="yes">แนบกระดาษคำตอบ</option>
+            <option value="no">ไม่แนบ</option>
+          </select>
+        </div>
+      </div>
+      <div class="row mt">
+        <button class="btn green" onclick="buildSheet()">สร้างใบงาน</button>
+        <button class="btn amber" onclick="window.print()">🖨 สั่งพิมพ์ / บันทึก PDF</button>
+        <button class="btn ghost" onclick="show('scr-home')">← กลับหน้าแรก</button>
+      </div>
+    </div>
+    <div class="card" id="sheet"></div>
+  </section>
+
+</div>
+
+<script>
+/* =========================================================================
+   ██ ส่วนที่ 1 : ตั้งค่าเกม  (แก้ไขได้ง่าย)
+   ========================================================================= */
+const CONFIG = {
+  hearts: 5,               // ❤ จำนวนหัวใจเริ่มต้น (ปรับเป็น 5 สำหรับห้องคละความสามารถ)
+  refillAmount: 3,         // เติมหัวใจครั้งละกี่ดวงเมื่อหมด
+  allowRefill: true,       // อนุญาตให้เติมหัวใจเพื่อทำต่อจนครบ 25 ข้อ
+  passPercent: 60,         // เกณฑ์ผ่าน (ร้อยละ)
+  shuffleQuestions: false, // false = เรียงตามลำดับ เพื่อรักษาความเป็นข้อสอบคู่ขนาน
+  shuffleChoices: false,   // true = สลับตัวเลือก ก-ง
+  teacherPin: '1234',      // 🔐 รหัสผ่านห้องครู
+  schoolName: 'โรงเรียน ............................................',
+  subject: 'คณิตศาสตร์พื้นฐาน  ระดับชั้นมัธยมศึกษาตอนต้น',
+  unitName: 'หน่วยการเรียนรู้ เรื่อง เลขยกกำลัง',
+  timeLimitNote: 'เวลา 50 นาที'
+};
+
+/* =========================================================================
+   ██ ส่วนที่ 2 : คลังโจทย์  (แก้ไข / เพิ่มโจทย์ตรงนี้)
+   -------------------------------------------------------------------------
+   โครงสร้างแต่ละด่าน : levelXData = {
+        title  : ชื่อด่าน
+        type   : 'power' | 'prop' | 'muldiv' | 'addsub'  (ใช้สร้างโจทย์สำรองอัตโนมัติ)
+        number : จำนวนข้อที่ใช้จริงในด่านนี้   <<< (questionCount)
+        min,max: ช่วงตัวเลขสำหรับสร้างโจทย์อัตโนมัติ
+        a, b   : ค่าคงที่สำหรับสร้างโจทย์อัตโนมัติ
+        items  : คลังโจทย์ที่พิมพ์เอง
+   }
+   โครงสร้างโจทย์ 1 ข้อ :
+        story   : สถานการณ์ / โจทย์ปัญหา  (ไม่ใส่ก็ได้)
+        q       : คำถาม
+        choices : ตัวเลือก 4 ข้อ  [ก, ข, ค, ง]
+        answer  : ลำดับข้อที่ถูก เริ่มนับที่ 0
+        hint    : คำใบ้
+        why     : คำอธิบายเฉลย
+        accept  : (ไม่ใส่ก็ได้) คำตอบที่ยอมรับในโหมดพิมพ์คำตอบเอง
+                  ถ้าไม่ใส่ ข้อนั้นจะยังเป็นแบบเลือกตอบเสมอ
+   การพิมพ์สัญลักษณ์ :
+        เลขยกกำลัง →  2^5 , 3^(−2) , a^(m+n)   ระบบวาดเลขชี้กำลังยกสูงให้อัตโนมัติ
+        เศษส่วน    →  [[1/8]] , [[1/2^3]]      ระบบวาดเศษส่วนซ้อนบน-ล่างให้อัตโนมัติ
+        กรณฑ์      →  √49 , ∛27                ระบบวาดขีดคร่อมให้อัตโนมัติ
+   ========================================================================= */
+
+/* ----------------------- ชุดที่ 1 : ก่อนเรียน ----------------------- */
+const PRE = {
+  label:'แบบทดสอบก่อนเรียน (Pre-test)', code:'ชุด A',
+
+  level1Data:{
+    title:'ความหมายของเลขยกกำลัง และการเขียนจำนวนเต็มในรูปเลขยกกำลังฐานต่าง ๆ', type:'power', color:'#2563eb',
+    number:10, min:2, max:10, a:1, b:1,
+    items:[
+      {q:'2^5 มีค่าเท่ากับข้อใด', choices:['10','25','32','64'], answer:2, accept:['32'],
+       hint:'2^5 หมายถึงนำ 2 มาคูณกัน 5 ตัว ไม่ใช่ 2 คูณ 5',
+       why:'2^5 = 2 × 2 × 2 × 2 × 2 = 32 (ข้อผิดพลาดที่พบบ่อยคือคิดเป็น 2 × 5 = 10)'},
+
+      {q:'จำนวน 81 เขียนในรูปเลขยกกำลังที่มีฐานเป็น 3 ได้ตรงกับข้อใด', choices:['3^3','3^4','3^5','3^6'], answer:1, accept:['3^4'],
+       hint:'หารด้วย 3 ไปเรื่อย ๆ 81 ÷ 3 = 27 , 27 ÷ 3 = 9 , 9 ÷ 3 = 3',
+       why:'81 = 3 × 3 × 3 × 3 จึงเขียนได้เป็น 3^4 (นับจำนวนตัวประกอบที่เป็น 3 ได้ 4 ตัว)'},
+
+      {q:'จำนวน 729 เขียนในรูปเลขยกกำลังที่มีฐานเป็น 3 ได้ตรงกับข้อใด', choices:['3^4','3^5','3^6','3^7'], answer:2, accept:['3^6'],
+       hint:'3^5 = 243 ลองคูณ 3 เพิ่มอีกหนึ่งตัว',
+       why:'3^5 = 243 ดังนั้น 3^6 = 243 × 3 = 729 จึงได้ว่า 729 = 3^6'},
+
+      {q:'ในเลขยกกำลัง 7^3 จำนวน 7 เรียกว่าอะไร', choices:['ฐาน','เลขชี้กำลัง','ผลคูณ','สัมประสิทธิ์'], answer:0,
+       hint:'จำนวนที่ถูกนำไปคูณซ้ำ ๆ เรียกว่าอะไร',
+       why:'ในเลขยกกำลัง a^n เรียก a ว่า ฐาน และเรียก n ว่า เลขชี้กำลัง ดังนั้น 7^3 มี 7 เป็นฐาน และ 3 เป็นเลขชี้กำลัง มีค่าเท่ากับ 343'},
+
+      {q:'(−2)^4 มีค่าเท่ากับข้อใด', choices:['−16','16','−8','8'], answer:1, accept:['16'],
+       hint:'ฐานคือ −2 ทั้งจำนวน และเลขชี้กำลังเป็นจำนวนคู่',
+       why:'(−2)^4 = (−2)(−2)(−2)(−2) = 16 เมื่อฐานเป็นจำนวนลบและเลขชี้กำลังเป็นจำนวนคู่ ผลลัพธ์เป็นจำนวนบวกเสมอ'},
+
+      {q:'−2^4 มีค่าเท่ากับข้อใด', choices:['16','−16','8','−8'], answer:1, accept:['-16'],
+       hint:'สังเกตว่าไม่มีวงเล็บ เลขชี้กำลังจึงกระทำกับ 2 เท่านั้น',
+       why:'−2^4 = −(2^4) = −16 ซึ่งต่างจาก (−2)^4 = 16 เพราะเมื่อไม่มีวงเล็บ เครื่องหมายลบไม่ได้เป็นส่วนหนึ่งของฐาน'},
+
+      {q:'5^0 มีค่าเท่ากับข้อใด', choices:['0','1','5','25'], answer:1, accept:['1'],
+       hint:'จำนวนใด ๆ ที่ไม่เป็นศูนย์ เมื่อยกกำลังศูนย์ มีค่าเท่าใด',
+       why:'ตามบทนิยาม a^0 = 1 เมื่อ a ≠ 0 ดังนั้น 5^0 = 1 ตรวจสอบได้จาก 5^3 ÷ 5^3 = 5^(3−3) = 5^0 และผลหารของจำนวนที่เท่ากันย่อมเท่ากับ 1'},
+
+      {q:'2^(−3) มีค่าเท่ากับข้อใด', choices:['[[1/8]]','−8','−[[1/8]]','[[1/6]]'], answer:0, accept:['1/8','0.125'],
+       hint:'ใช้บทนิยาม a^(−n) = [[1/a^n]]',
+       why:'2^(−3) = [[1/2^3]] = [[1/8]] เลขชี้กำลังที่เป็นจำนวนลบไม่ได้ทำให้ผลลัพธ์เป็นจำนวนลบ แต่หมายถึงส่วนกลับของเลขยกกำลังนั้น'},
+
+      {q:'จำนวน 625 เขียนในรูปเลขยกกำลังที่มีฐานเป็น 5 ได้ตรงกับข้อใด', choices:['5^2','5^3','5^4','5^5'], answer:2, accept:['5^4'],
+       hint:'5 × 5 = 25 , 25 × 5 = 125 , 125 × 5 = ?',
+       why:'625 = 5 × 5 × 5 × 5 = 5^4'},
+
+      {q:'จำนวน 1000 เขียนในรูปเลขยกกำลังที่มีฐานเป็น 10 ได้ตรงกับข้อใด', choices:['10^2','10^3','10^4','10^5'], answer:1, accept:['10^3'],
+       hint:'นับจำนวนศูนย์ที่อยู่หลังเลข 1',
+       why:'1000 = 10 × 10 × 10 = 10^3 สำหรับเลขยกกำลังฐานสิบ เลขชี้กำลังเท่ากับจำนวนศูนย์พอดี'},
+
+      {q:'6^3 มีค่าเท่ากับข้อใด', choices:['18','36','216','729'], answer:2, accept:['216'],
+       hint:'6 × 6 = 36 แล้วจึงคูณด้วย 6 อีกหนึ่งครั้ง',
+       why:'6^3 = 6 × 6 × 6 = 216 (ไม่ใช่ 6 × 3 = 18)'},
+
+      {q:'ข้อใดเขียนแทนจำนวน 64 ไม่ถูกต้อง', choices:['2^6','4^3','8^2','16^2'], answer:3,
+       hint:'ลองหาค่าของแต่ละตัวเลือกแล้วเปรียบเทียบกับ 64',
+       why:'2^6 = 64 , 4^3 = 64 และ 8^2 = 64 แต่ 16^2 = 256 จึงไม่เท่ากับ 64 (จำนวนหนึ่งจำนวนเขียนในรูปเลขยกกำลังได้หลายฐาน)'}
+    ]
+  },
+
+  level2Data:{
+    title:'สมบัติของเลขยกกำลัง', type:'prop', color:'#7c3aed',
+    number:6, min:2, max:6, a:2, b:3,
+    items:[
+      {q:'a^m × a^n มีค่าเท่ากับข้อใด เมื่อ a ≠ 0', choices:['a^(m+n)','a^(m−n)','a^(m×n)','a^(m÷n)'], answer:0,
+       hint:'สมบัติการคูณเลขยกกำลังที่มีฐานเดียวกัน ให้นำเลขชี้กำลังมาทำอย่างไร',
+       why:'เมื่อฐานเหมือนกัน การคูณให้นำเลขชี้กำลังมาบวกกัน คือ a^m × a^n = a^(m+n) เช่น 2^2 × 2^3 = 2^5 = 32'},
+
+      {q:'(2^3)^2 มีค่าเท่ากับข้อใด', choices:['2^5','2^6','2^8','2^9'], answer:1, accept:['2^6','64'],
+       hint:'ใช้สมบัติกำลังของกำลัง (a^m)^n = a^(m×n)',
+       why:'(2^3)^2 = 2^(3×2) = 2^6 = 64 (ไม่ใช่ 2^5 เพราะกำลังของกำลังใช้การคูณ ไม่ใช่การบวก)'},
+
+      {q:'ข้อใดกล่าวถูกต้องเกี่ยวกับ a^0 เมื่อ a ≠ 0', choices:['a^0 = 0','a^0 = 1','a^0 = a','หาค่าไม่ได้'], answer:1,
+       hint:'ลองพิจารณาผลหาร a^3 ÷ a^3',
+       why:'a^3 ÷ a^3 = a^(3−3) = a^0 และผลหารของจำนวนที่เท่ากันซึ่งไม่เป็นศูนย์ย่อมเท่ากับ 1 จึงนิยามให้ a^0 = 1 เมื่อ a ≠ 0'},
+
+      {q:'(3 × 5)^2 มีค่าเท่ากับข้อใด', choices:['3^2 × 5^2','3^2 + 5^2','3 × 5^2','3^2 × 5'], answer:0, accept:['225'],
+       hint:'ใช้สมบัติ (a × b)^n = a^n × b^n',
+       why:'(3 × 5)^2 = 3^2 × 5^2 = 9 × 25 = 225 ซึ่งตรวจสอบได้จาก (3 × 5)^2 = 15^2 = 225'},
+
+      {q:'5^(−2) เขียนในรูปเศษส่วนได้ตรงกับข้อใด', choices:['−25','[[1/25]]','−[[1/25]]','[[1/10]]'], answer:1, accept:['1/25','0.04'],
+       hint:'ใช้บทนิยาม a^(−n) = [[1/a^n]]',
+       why:'5^(−2) = [[1/5^2]] = [[1/25]] เครื่องหมายลบที่เลขชี้กำลังหมายถึงส่วนกลับ ไม่ได้หมายถึงจำนวนลบ'},
+
+      {q:'ข้อใดกล่าวถูกต้อง', choices:['2^3 × 2^4 = 4^7','2^3 × 2^4 = 2^12','2^3 × 2^4 = 2^7','2^3 + 2^4 = 2^7'], answer:2,
+       hint:'ฐานเดียวกันคูณกัน ให้บวกเลขชี้กำลัง โดยฐานยังคงเดิม',
+       why:'2^3 × 2^4 = 2^(3+4) = 2^7 = 128 ฐานยังคงเป็น 2 ไม่เปลี่ยนเป็น 4 และสมบัตินี้ใช้กับการบวกไม่ได้ เพราะ 2^3 + 2^4 = 8 + 16 = 24'},
+
+      {q:'(a^m)^n มีค่าเท่ากับข้อใด', choices:['a^(m+n)','a^(m×n)','a^(m−n)','(a × n)^m'], answer:1,
+       hint:'กำลังของกำลัง ให้นำเลขชี้กำลังมาคูณกัน',
+       why:'(a^m)^n = a^(m×n) เช่น (3^2)^3 = 3^6 = 729 เพราะ (3^2)^3 = 3^2 × 3^2 × 3^2 = 3^(2+2+2) = 3^6'},
+
+      {q:'([[1/2]])^3 มีค่าเท่ากับข้อใด', choices:['[[1/8]]','[[1/6]]','[[3/2]]','[[2/3]]'], answer:0, accept:['1/8','0.125'],
+       hint:'ใช้สมบัติ ([[a/b]])^n = [[a^n/b^n]]',
+       why:'([[1/2]])^3 = [[1^3/2^3]] = [[1/8]] คือยกกำลังทั้งตัวเศษและตัวส่วน'}
+    ]
+  },
+
+  level3Data:{
+    title:'การคูณและการหารเลขยกกำลังที่มีฐานเดียวกัน', type:'muldiv', color:'#0d9488',
+    number:5, min:2, max:8, a:2, b:3,
+    items:[
+      {q:'3^2 × 3^3 มีค่าเท่ากับข้อใด', choices:['3^5','3^6','9^5','9^6'], answer:0, accept:['3^5','243'],
+       hint:'ฐานเดียวกันคูณกัน ให้บวกเลขชี้กำลัง และฐานคงเดิม',
+       why:'3^2 × 3^3 = 3^(2+3) = 3^5 = 243 ฐานยังคงเป็น 3 ไม่เปลี่ยนเป็น 9'},
+
+      {q:'2^8 ÷ 2^5 มีค่าเท่ากับข้อใด', choices:['2^3','2^13','2^40','1^3'], answer:0, accept:['2^3','8'],
+       hint:'ฐานเดียวกันหารกัน ให้ลบเลขชี้กำลัง',
+       why:'2^8 ÷ 2^5 = 2^(8−5) = 2^3 = 8'},
+
+      {q:'5^4 × 5^0 ÷ 5^2 มีค่าเท่ากับข้อใด', choices:['5^2','5^6','5^0','5^4'], answer:0, accept:['5^2','25'],
+       hint:'จำไว้ว่า 5^0 = 1 แล้วจึงใช้สมบัติการคูณและการหารตามลำดับ',
+       why:'5^4 × 5^0 ÷ 5^2 = 5^(4+0−2) = 5^2 = 25'},
+
+      {q:'7^5 ÷ 7^5 มีค่าเท่ากับข้อใด', choices:['0','1','7','7^10'], answer:1, accept:['1','7^0'],
+       hint:'เมื่อเลขชี้กำลังเท่ากัน ผลต่างของเลขชี้กำลังเป็นเท่าใด',
+       why:'7^5 ÷ 7^5 = 7^(5−5) = 7^0 = 1 สอดคล้องกับการหารจำนวนที่เท่ากันซึ่งได้ผลลัพธ์เป็น 1'},
+
+      {q:'2^3 × 2^(−5) มีค่าเท่ากับข้อใด', choices:['2^(−2)','2^8','2^(−15)','2^2'], answer:0, accept:['1/4','0.25','2^-2','2^(-2)'],
+       hint:'นำเลขชี้กำลังมาบวกกัน คือ 3 + (−5)',
+       why:'2^3 × 2^(−5) = 2^(3+(−5)) = 2^(−2) = [[1/2^2]] = [[1/4]]'},
+
+      {q:'10^6 ÷ 10^4 มีค่าเท่ากับข้อใด', choices:['10^2','10^10','10^24','1^2'], answer:0, accept:['10^2','100'],
+       hint:'ฐานเดียวกันหารกัน ให้ลบเลขชี้กำลัง',
+       why:'10^6 ÷ 10^4 = 10^(6−4) = 10^2 = 100'},
+
+      {q:'(3^2 × 3)^2 มีค่าเท่ากับข้อใด', choices:['3^6','3^5','3^4','3^8'], answer:0, accept:['3^6','729'],
+       hint:'ทำในวงเล็บก่อนโดยบวกเลขชี้กำลัง จำไว้ว่า 3 = 3^1',
+       why:'(3^2 × 3^1)^2 = (3^3)^2 = 3^(3×2) = 3^6 = 729'}
+    ]
+  },
+
+  level4Data:{
+    title:'การบวกและการลบเลขยกกำลัง และโจทย์ปัญหา', type:'addsub', color:'#ea580c',
+    number:4, min:2, max:6, a:5, b:3,
+    items:[
+      {q:'3^2 + 3^3 มีค่าเท่ากับข้อใด', choices:['3^5','36','3^6','9^5'], answer:1, accept:['36'],
+       hint:'การบวกไม่มีสมบัติของเลขยกกำลัง ต้องหาค่าของแต่ละพจน์ก่อน',
+       why:'3^2 = 9 และ 3^3 = 27 ดังนั้น 9 + 27 = 36 (ไม่ใช่ 3^5 = 243 เพราะการบวกไม่ใช้วิธีบวกเลขชี้กำลัง)'},
+
+      {q:'2^5 − 2^3 มีค่าเท่ากับข้อใด', choices:['2^2','24','8','2^8'], answer:1, accept:['24'],
+       hint:'หาค่าของแต่ละพจน์ก่อน แล้วจึงนำมาลบกัน',
+       why:'2^5 = 32 และ 2^3 = 8 ดังนั้น 32 − 8 = 24 (ไม่ใช่ 2^2 = 4 เพราะการลบไม่ใช้วิธีลบเลขชี้กำลัง)'},
+
+      {story:'แบคทีเรียชนิดหนึ่งแบ่งตัวเพิ่มเป็น 2 เท่าทุก 1 ชั่วโมง โดยเริ่มต้นมีแบคทีเรีย 1 ตัว',
+       q:'เมื่อเวลาผ่านไป 9 ชั่วโมง จะมีแบคทีเรียทั้งหมดกี่ตัว', choices:['18','81','256','512'], answer:3, accept:['512','2^9'],
+       hint:'เขียนจำนวนแบคทีเรียให้อยู่ในรูป 2 ยกกำลังจำนวนชั่วโมง',
+       why:'เมื่อเวลาผ่านไป n ชั่วโมง จะมีแบคทีเรีย 2^n ตัว ดังนั้นเมื่อผ่านไป 9 ชั่วโมง จะมี 2^9 = 512 ตัว'},
+
+      {story:'กล่องของขวัญทรงลูกบาศก์ใบหนึ่ง มีความยาวขอบด้านละ 7 เซนติเมตร',
+       q:'กล่องใบนี้มีปริมาตรกี่ลูกบาศก์เซนติเมตร', choices:['21','49','343','512'], answer:2, accept:['343','7^3'],
+       hint:'ปริมาตรทรงลูกบาศก์ = ด้าน × ด้าน × ด้าน = ด้าน^3',
+       why:'ปริมาตร = 7^3 = 7 × 7 × 7 = 343 ลูกบาศก์เซนติเมตร'},
+
+      {q:'5 × 2^3 + 3 × 2^2 มีค่าเท่ากับข้อใด', choices:['52','64','40','8 × 2^5'], answer:0, accept:['52'],
+       hint:'หาค่าเลขยกกำลังก่อน แล้วจึงคูณและบวกตามลำดับการดำเนินการ',
+       why:'5 × 2^3 = 5 × 8 = 40 และ 3 × 2^2 = 3 × 4 = 12 ดังนั้นผลลัพธ์เท่ากับ 40 + 12 = 52'},
+
+      {story:'โรงเรียนจัดกิจกรรมส่งต่อข่าวสาร โดยรอบที่ 1 นักเรียน 1 คน ส่งข่าวต่อให้เพื่อน 3 คน จากนั้นในรอบถัดไปแต่ละคนส่งต่อให้เพื่อนอีกคนละ 3 คน เป็นเช่นนี้เรื่อยไป',
+       q:'ในรอบที่ 5 จะมีนักเรียนที่ได้รับข่าวสารกี่คน', choices:['15','125','243','729'], answer:2, accept:['243','3^5'],
+       hint:'รอบที่ 1 มี 3 คน รอบที่ 2 มี 3^2 คน ลองหารูปแบบของรอบที่ n',
+       why:'ในรอบที่ n มีนักเรียนได้รับข่าวสาร 3^n คน ดังนั้นรอบที่ 5 มี 3^5 = 243 คน'}
+    ]
+  }
+};
+
+/* ----------------------- ชุดที่ 2 : หลังเรียน (คู่ขนานข้อต่อข้อ) ----------------------- */
+const POST = {
+  label:'แบบทดสอบหลังเรียน (Post-test)', code:'ชุด B',
+
+  level1Data:{
+    title:'ความหมายของเลขยกกำลัง และการเขียนจำนวนเต็มในรูปเลขยกกำลังฐานต่าง ๆ', type:'power', color:'#2563eb',
+    number:10, min:2, max:10, a:1, b:1,
+    items:[
+      {q:'3^4 มีค่าเท่ากับข้อใด', choices:['12','64','81','243'], answer:2, accept:['81'],
+       hint:'3^4 หมายถึงนำ 3 มาคูณกัน 4 ตัว ไม่ใช่ 3 คูณ 4',
+       why:'3^4 = 3 × 3 × 3 × 3 = 81 (ข้อผิดพลาดที่พบบ่อยคือคิดเป็น 3 × 4 = 12)'},
+
+      {q:'จำนวน 32 เขียนในรูปเลขยกกำลังที่มีฐานเป็น 2 ได้ตรงกับข้อใด', choices:['2^3','2^4','2^5','2^6'], answer:2, accept:['2^5'],
+       hint:'หารด้วย 2 ไปเรื่อย ๆ 32 ÷ 2 = 16 , 16 ÷ 2 = 8 , 8 ÷ 2 = 4',
+       why:'32 = 2 × 2 × 2 × 2 × 2 จึงเขียนได้เป็น 2^5 (นับจำนวนตัวประกอบที่เป็น 2 ได้ 5 ตัว)'},
+
+      {q:'จำนวน 512 เขียนในรูปเลขยกกำลังที่มีฐานเป็น 2 ได้ตรงกับข้อใด', choices:['2^6','2^7','2^8','2^9'], answer:3, accept:['2^9'],
+       hint:'2^8 = 256 ลองคูณ 2 เพิ่มอีกหนึ่งตัว',
+       why:'2^8 = 256 ดังนั้น 2^9 = 256 × 2 = 512 จึงได้ว่า 512 = 2^9'},
+
+      {q:'ในเลขยกกำลัง 4^6 จำนวน 6 เรียกว่าอะไร', choices:['ฐาน','เลขชี้กำลัง','ผลบวก','ตัวประกอบ'], answer:1,
+       hint:'จำนวนที่บอกว่าต้องนำฐานมาคูณกันกี่ตัว เรียกว่าอะไร',
+       why:'ในเลขยกกำลัง a^n เรียก n ว่า เลขชี้กำลัง และเรียก a ว่า ฐาน ดังนั้น 4^6 มี 6 เป็นเลขชี้กำลัง หมายถึงนำ 4 มาคูณกัน 6 ตัว'},
+
+      {q:'(−3)^4 มีค่าเท่ากับข้อใด', choices:['−81','81','−12','12'], answer:1, accept:['81'],
+       hint:'ฐานคือ −3 ทั้งจำนวน และเลขชี้กำลังเป็นจำนวนคู่',
+       why:'(−3)^4 = (−3)(−3)(−3)(−3) = 81 เมื่อฐานเป็นจำนวนลบและเลขชี้กำลังเป็นจำนวนคู่ ผลลัพธ์เป็นจำนวนบวกเสมอ'},
+
+      {q:'−3^4 มีค่าเท่ากับข้อใด', choices:['81','−81','12','−12'], answer:1, accept:['-81'],
+       hint:'สังเกตว่าไม่มีวงเล็บ เลขชี้กำลังจึงกระทำกับ 3 เท่านั้น',
+       why:'−3^4 = −(3^4) = −81 ซึ่งต่างจาก (−3)^4 = 81 เพราะเมื่อไม่มีวงเล็บ เครื่องหมายลบไม่ได้เป็นส่วนหนึ่งของฐาน'},
+
+      {q:'8^0 มีค่าเท่ากับข้อใด', choices:['0','1','8','64'], answer:1, accept:['1'],
+       hint:'จำนวนใด ๆ ที่ไม่เป็นศูนย์ เมื่อยกกำลังศูนย์ มีค่าเท่าใด',
+       why:'ตามบทนิยาม a^0 = 1 เมื่อ a ≠ 0 ดังนั้น 8^0 = 1 ตรวจสอบได้จาก 8^2 ÷ 8^2 = 8^(2−2) = 8^0 และผลหารของจำนวนที่เท่ากันย่อมเท่ากับ 1'},
+
+      {q:'3^(−2) มีค่าเท่ากับข้อใด', choices:['[[1/9]]','−9','−[[1/9]]','[[1/6]]'], answer:0, accept:['1/9'],
+       hint:'ใช้บทนิยาม a^(−n) = [[1/a^n]]',
+       why:'3^(−2) = [[1/3^2]] = [[1/9]] เลขชี้กำลังที่เป็นจำนวนลบไม่ได้ทำให้ผลลัพธ์เป็นจำนวนลบ แต่หมายถึงส่วนกลับของเลขยกกำลังนั้น'},
+
+      {q:'จำนวน 216 เขียนในรูปเลขยกกำลังที่มีฐานเป็น 6 ได้ตรงกับข้อใด', choices:['6^2','6^3','6^4','6^5'], answer:1, accept:['6^3'],
+       hint:'6 × 6 = 36 , 36 × 6 = ?',
+       why:'216 = 6 × 6 × 6 = 6^3'},
+
+      {q:'จำนวน 100 เขียนในรูปเลขยกกำลังที่มีฐานเป็น 10 ได้ตรงกับข้อใด', choices:['10^1','10^2','10^3','10^4'], answer:1, accept:['10^2'],
+       hint:'นับจำนวนศูนย์ที่อยู่หลังเลข 1',
+       why:'100 = 10 × 10 = 10^2 สำหรับเลขยกกำลังฐานสิบ เลขชี้กำลังเท่ากับจำนวนศูนย์พอดี'},
+
+      {q:'5^3 มีค่าเท่ากับข้อใด', choices:['15','125','243','625'], answer:1, accept:['125'],
+       hint:'5 × 5 = 25 แล้วจึงคูณด้วย 5 อีกหนึ่งครั้ง',
+       why:'5^3 = 5 × 5 × 5 = 125 (ไม่ใช่ 5 × 3 = 15)'},
+
+      {q:'ข้อใดเขียนแทนจำนวน 81 ไม่ถูกต้อง', choices:['3^4','9^2','81^1','4^3'], answer:3,
+       hint:'ลองหาค่าของแต่ละตัวเลือกแล้วเปรียบเทียบกับ 81',
+       why:'3^4 = 81 , 9^2 = 81 และ 81^1 = 81 แต่ 4^3 = 64 จึงไม่เท่ากับ 81 (จำนวนหนึ่งจำนวนเขียนในรูปเลขยกกำลังได้หลายฐาน)'}
+    ]
+  },
+
+  level2Data:{
+    title:'สมบัติของเลขยกกำลัง', type:'prop', color:'#7c3aed',
+    number:6, min:2, max:6, a:3, b:2,
+    items:[
+      {q:'a^m ÷ a^n มีค่าเท่ากับข้อใด เมื่อ a ≠ 0', choices:['a^(m+n)','a^(m−n)','a^(m×n)','a^(n−m)'], answer:1,
+       hint:'สมบัติการหารเลขยกกำลังที่มีฐานเดียวกัน ให้นำเลขชี้กำลังมาทำอย่างไร',
+       why:'เมื่อฐานเหมือนกัน การหารให้นำเลขชี้กำลังของตัวตั้งลบด้วยเลขชี้กำลังของตัวหาร คือ a^m ÷ a^n = a^(m−n) เช่น 3^5 ÷ 3^2 = 3^3 = 27'},
+
+      {q:'(3^2)^2 มีค่าเท่ากับข้อใด', choices:['3^3','3^4','3^6','3^8'], answer:1, accept:['3^4','81'],
+       hint:'ใช้สมบัติกำลังของกำลัง (a^m)^n = a^(m×n)',
+       why:'(3^2)^2 = 3^(2×2) = 3^4 = 81 (ไม่ใช่ 3^3 เพราะกำลังของกำลังใช้การคูณ ไม่ใช่การบวก)'},
+
+      {q:'ข้อใดกล่าวถูกต้องเกี่ยวกับ a^(−n) เมื่อ a ≠ 0', choices:['a^(−n) = −a^n','a^(−n) = [[1/a^n]]','a^(−n) = 0','หาค่าไม่ได้'], answer:1,
+       hint:'เลขชี้กำลังที่เป็นจำนวนลบเกี่ยวข้องกับส่วนกลับของจำนวน',
+       why:'ตามบทนิยาม a^(−n) = [[1/a^n]] เมื่อ a ≠ 0 เช่น 2^(−3) = [[1/8]] เครื่องหมายลบที่เลขชี้กำลังไม่ได้ทำให้ผลลัพธ์เป็นจำนวนลบ'},
+
+      {q:'(2 × 5)^3 มีค่าเท่ากับข้อใด', choices:['2^3 × 5^3','2^3 + 5^3','2 × 5^3','2^3 × 5'], answer:0, accept:['1000'],
+       hint:'ใช้สมบัติ (a × b)^n = a^n × b^n',
+       why:'(2 × 5)^3 = 2^3 × 5^3 = 8 × 125 = 1000 ซึ่งตรวจสอบได้จาก (2 × 5)^3 = 10^3 = 1000'},
+
+      {q:'4^(−2) เขียนในรูปเศษส่วนได้ตรงกับข้อใด', choices:['−16','[[1/16]]','−[[1/16]]','[[1/8]]'], answer:1, accept:['1/16','0.0625'],
+       hint:'ใช้บทนิยาม a^(−n) = [[1/a^n]]',
+       why:'4^(−2) = [[1/4^2]] = [[1/16]] เครื่องหมายลบที่เลขชี้กำลังหมายถึงส่วนกลับ ไม่ได้หมายถึงจำนวนลบ'},
+
+      {q:'ข้อใดกล่าวถูกต้อง', choices:['3^2 × 3^3 = 9^5','3^2 × 3^3 = 3^6','3^2 × 3^3 = 3^5','3^2 + 3^3 = 3^5'], answer:2,
+       hint:'ฐานเดียวกันคูณกัน ให้บวกเลขชี้กำลัง โดยฐานยังคงเดิม',
+       why:'3^2 × 3^3 = 3^(2+3) = 3^5 = 243 ฐานยังคงเป็น 3 ไม่เปลี่ยนเป็น 9 และสมบัตินี้ใช้กับการบวกไม่ได้ เพราะ 3^2 + 3^3 = 9 + 27 = 36'},
+
+      {q:'(a × b)^n มีค่าเท่ากับข้อใด', choices:['a^n × b^n','a^n + b^n','(a + b)^n','a^n ÷ b^n'], answer:0,
+       hint:'เลขชี้กำลังกระจายไปยังตัวประกอบทุกตัวที่คูณกันอยู่ในวงเล็บ',
+       why:'(a × b)^n = a^n × b^n เช่น (2 × 3)^2 = 2^2 × 3^2 = 4 × 9 = 36 ซึ่งเท่ากับ 6^2 = 36'},
+
+      {q:'([[1/3]])^2 มีค่าเท่ากับข้อใด', choices:['[[1/9]]','[[2/3]]','[[1/6]]','[[3/2]]'], answer:0, accept:['1/9'],
+       hint:'ใช้สมบัติ ([[a/b]])^n = [[a^n/b^n]]',
+       why:'([[1/3]])^2 = [[1^2/3^2]] = [[1/9]] คือยกกำลังทั้งตัวเศษและตัวส่วน'}
+    ]
+  },
+
+  level3Data:{
+    title:'การคูณและการหารเลขยกกำลังที่มีฐานเดียวกัน', type:'muldiv', color:'#0d9488',
+    number:5, min:2, max:8, a:3, b:2,
+    items:[
+      {q:'2^4 × 2^3 มีค่าเท่ากับข้อใด', choices:['2^7','2^12','4^7','4^12'], answer:0, accept:['2^7','128'],
+       hint:'ฐานเดียวกันคูณกัน ให้บวกเลขชี้กำลัง และฐานคงเดิม',
+       why:'2^4 × 2^3 = 2^(4+3) = 2^7 = 128 ฐานยังคงเป็น 2 ไม่เปลี่ยนเป็น 4'},
+
+      {q:'3^7 ÷ 3^4 มีค่าเท่ากับข้อใด', choices:['3^3','3^11','3^28','1^3'], answer:0, accept:['3^3','27'],
+       hint:'ฐานเดียวกันหารกัน ให้ลบเลขชี้กำลัง',
+       why:'3^7 ÷ 3^4 = 3^(7−4) = 3^3 = 27'},
+
+      {q:'2^5 × 2^0 ÷ 2^3 มีค่าเท่ากับข้อใด', choices:['2^2','2^8','2^0','2^5'], answer:0, accept:['2^2','4'],
+       hint:'จำไว้ว่า 2^0 = 1 แล้วจึงใช้สมบัติการคูณและการหารตามลำดับ',
+       why:'2^5 × 2^0 ÷ 2^3 = 2^(5+0−3) = 2^2 = 4'},
+
+      {q:'6^3 ÷ 6^3 มีค่าเท่ากับข้อใด', choices:['0','1','6','6^6'], answer:1, accept:['1','6^0'],
+       hint:'เมื่อเลขชี้กำลังเท่ากัน ผลต่างของเลขชี้กำลังเป็นเท่าใด',
+       why:'6^3 ÷ 6^3 = 6^(3−3) = 6^0 = 1 สอดคล้องกับการหารจำนวนที่เท่ากันซึ่งได้ผลลัพธ์เป็น 1'},
+
+      {q:'3^2 × 3^(−4) มีค่าเท่ากับข้อใด', choices:['3^(−2)','3^8','3^(−8)','3^6'], answer:0, accept:['1/9','3^-2','3^(-2)'],
+       hint:'นำเลขชี้กำลังมาบวกกัน คือ 2 + (−4)',
+       why:'3^2 × 3^(−4) = 3^(2+(−4)) = 3^(−2) = [[1/3^2]] = [[1/9]]'},
+
+      {q:'10^5 ÷ 10^3 มีค่าเท่ากับข้อใด', choices:['10^2','10^8','10^15','1^2'], answer:0, accept:['10^2','100'],
+       hint:'ฐานเดียวกันหารกัน ให้ลบเลขชี้กำลัง',
+       why:'10^5 ÷ 10^3 = 10^(5−3) = 10^2 = 100'},
+
+      {q:'(2^3 × 2)^2 มีค่าเท่ากับข้อใด', choices:['2^8','2^7','2^6','2^12'], answer:0, accept:['2^8','256'],
+       hint:'ทำในวงเล็บก่อนโดยบวกเลขชี้กำลัง จำไว้ว่า 2 = 2^1',
+       why:'(2^3 × 2^1)^2 = (2^4)^2 = 2^(4×2) = 2^8 = 256'}
+    ]
+  },
+
+  level4Data:{
+    title:'การบวกและการลบเลขยกกำลัง และโจทย์ปัญหา', type:'addsub', color:'#ea580c',
+    number:4, min:2, max:6, a:4, b:3,
+    items:[
+      {q:'2^3 + 2^4 มีค่าเท่ากับข้อใด', choices:['2^7','24','2^12','16'], answer:1, accept:['24'],
+       hint:'การบวกไม่มีสมบัติของเลขยกกำลัง ต้องหาค่าของแต่ละพจน์ก่อน',
+       why:'2^3 = 8 และ 2^4 = 16 ดังนั้น 8 + 16 = 24 (ไม่ใช่ 2^7 = 128 เพราะการบวกไม่ใช้วิธีบวกเลขชี้กำลัง)'},
+
+      {q:'3^4 − 3^2 มีค่าเท่ากับข้อใด', choices:['3^2','72','9','3^6'], answer:1, accept:['72'],
+       hint:'หาค่าของแต่ละพจน์ก่อน แล้วจึงนำมาลบกัน',
+       why:'3^4 = 81 และ 3^2 = 9 ดังนั้น 81 − 9 = 72 (ไม่ใช่ 3^2 = 9 เพราะการลบไม่ใช้วิธีลบเลขชี้กำลัง)'},
+
+      {story:'อะมีบาชนิดหนึ่งเพิ่มจำนวนเป็น 3 เท่าทุก 1 ชั่วโมง โดยเริ่มต้นมีอะมีบา 1 ตัว',
+       q:'เมื่อเวลาผ่านไป 5 ชั่วโมง จะมีอะมีบาทั้งหมดกี่ตัว', choices:['15','125','243','729'], answer:2, accept:['243','3^5'],
+       hint:'เขียนจำนวนอะมีบาให้อยู่ในรูป 3 ยกกำลังจำนวนชั่วโมง',
+       why:'เมื่อเวลาผ่านไป n ชั่วโมง จะมีอะมีบา 3^n ตัว ดังนั้นเมื่อผ่านไป 5 ชั่วโมง จะมี 3^5 = 243 ตัว'},
+
+      {story:'กล่องพัสดุทรงลูกบาศก์ใบหนึ่ง มีความยาวขอบด้านละ 9 เซนติเมตร',
+       q:'กล่องใบนี้มีปริมาตรกี่ลูกบาศก์เซนติเมตร', choices:['27','81','729','810'], answer:2, accept:['729','9^3'],
+       hint:'ปริมาตรทรงลูกบาศก์ = ด้าน × ด้าน × ด้าน = ด้าน^3',
+       why:'ปริมาตร = 9^3 = 9 × 9 × 9 = 729 ลูกบาศก์เซนติเมตร'},
+
+      {q:'4 × 3^3 + 2 × 3^2 มีค่าเท่ากับข้อใด', choices:['126','90','108','6 × 3^5'], answer:0, accept:['126'],
+       hint:'หาค่าเลขยกกำลังก่อน แล้วจึงคูณและบวกตามลำดับการดำเนินการ',
+       why:'4 × 3^3 = 4 × 27 = 108 และ 2 × 3^2 = 2 × 9 = 18 ดังนั้นผลลัพธ์เท่ากับ 108 + 18 = 126'},
+
+      {story:'ชมรมคณิตศาสตร์จัดกิจกรรมส่งต่อข้อความ โดยรอบที่ 1 นักเรียน 1 คน ส่งข้อความต่อให้เพื่อน 2 คน จากนั้นในรอบถัดไปแต่ละคนส่งต่อให้เพื่อนอีกคนละ 2 คน เป็นเช่นนี้เรื่อยไป',
+       q:'ในรอบที่ 8 จะมีนักเรียนที่ได้รับข้อความกี่คน', choices:['16','64','128','256'], answer:3, accept:['256','2^8'],
+       hint:'รอบที่ 1 มี 2 คน รอบที่ 2 มี 2^2 คน ลองหารูปแบบของรอบที่ n',
+       why:'ในรอบที่ n มีนักเรียนได้รับข้อความ 2^n คน ดังนั้นรอบที่ 8 มี 2^8 = 256 คน'}
+    ]
+  }
+};
+
+const TESTS = { pre: PRE, post: POST };
+const LV_KEYS = ['level1Data','level2Data','level3Data','level4Data'];
+
+/* =========================================================================
+   ██ ส่วนที่ 3 : ตัวเรนเดอร์สัญลักษณ์คณิตศาสตร์
+   ^x → เลขชี้กำลัง | [[a/b]] → เศษส่วนซ้อน | √x , ∛x → กรณฑ์พร้อมขีดคร่อม
+   ========================================================================= */
+function mathify(input){
+  if(input === null || input === undefined) return '';
+  const s = String(input); let out = '';
+  for(let i=0;i<s.length;i++){
+    /* --- เศษส่วน [[a/b]] --- */
+    if(s[i]==='[' && s[i+1]==='['){
+      const end = s.indexOf(']]', i+2);
+      if(end > -1){
+        const inner = s.slice(i+2, end);
+        const p = inner.lastIndexOf('/');
+        if(p > -1){
+          out += '<span class="fr"><span class="nu">'+mathify(inner.slice(0,p))+
+                 '</span><span class="de">'+mathify(inner.slice(p+1))+'</span></span>';
+          i = end + 1; continue;
+        }
+      }
+    }
+    const ch = s[i];
+    /* --- เลขชี้กำลัง ^ --- */
+    if(ch === '^'){
+      let j=i+1, sup='', endAt=i;
+      if(s[j]==='('){
+        let depth=0,k=j;
+        for(;k<s.length;k++){ if(s[k]==='(')depth++; else if(s[k]===')'){depth--; if(depth===0)break;} }
+        if(k<s.length){ sup = s.slice(j+1,k); endAt = k; }
+      }else{
+        let k=j; if(s[k]==='-'||s[k]==='\u2212') k++;
+        while(k<s.length && /[0-9]/.test(s[k])) k++;
+        if(k===j && /[a-zA-Z]/.test(s[j]||'')) k=j+1;
+        if(k>j){ sup = s.slice(j,k); endAt = k-1; }
+      }
+      if(sup === ''){ out += '^'; continue; }
+      out += '<sup class="ex">'+mathify(sup)+'</sup>';
+      i = endAt; continue;
+    }
+    /* --- กรณฑ์ √ ∛ --- */
+    if(ch === '\u221A' || ch === '\u221B'){
+      let j=i+1; while(j<s.length && s[j]===' ') j++;
+      let rad='', endAt=i;
+      if(s[j]==='('){
+        let depth=0,k=j;
+        for(;k<s.length;k++){ if(s[k]==='(')depth++; else if(s[k]===')'){depth--; if(depth===0)break;} }
+        if(k<s.length){ rad = s.slice(j+1,k); endAt = k; }
+      }else{
+        let k=j; if(s[k]==='-'||s[k]==='\u2212') k++;
+        while(k<s.length && /[0-9.]/.test(s[k])) k++;
+        if(k===j && /[a-zA-Z]/.test(s[j]||'')) k=j+1;
+        if(k>j){ rad = s.slice(j,k); endAt = k-1; }
+      }
+      if(rad === ''){ out += ch; continue; }
+      out += '<span class="rt"><span class="rs">'+ch+'</span><span class="rd">'+mathify(rad)+'</span></span>';
+      i = endAt; continue;
+    }
+    out += ch;
+  }
+  return out;
+}
+function esc(s){ return String(s===undefined||s===null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+function M(s){ return mathify(esc(s)).replace(/&lt;b&gt;/g,'<b>').replace(/&lt;\/b&gt;/g,'</b>'); }
+const KEY_LABEL = ['ก','ข','ค','ง','จ','ฉ'];
+
+/* =========================================================================
+   ██ ส่วนที่ 4 : สร้างโจทย์สำรองอัตโนมัติ (ใช้เมื่อ items น้อยกว่าค่า number)
+   ========================================================================= */
+function shuffle(arr){ const a=arr.slice(); for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));const t=a[i];a[i]=a[j];a[j]=t;} return a; }
+function pw(b,e){ let v=1; for(let i=0;i<e;i++) v*=b; return v; }
+function uniq4(correct, pool){
+  const set=[correct]; const cand=shuffle(pool);
+  for(let i=0;i<cand.length;i++){ if(set.length>=4) break; if(set.indexOf(cand[i])<0 && cand[i]!=='') set.push(cand[i]); }
+  let n=2; while(set.length<4){ const x=String(correct)+'.'+n; if(set.indexOf(x)<0) set.push(x); n++; }
+  return shuffle(set);
+}
+function autoGen(lv, need){
+  const out=[];
+  const baseLo=Math.max(2,Math.abs(lv.min!==undefined?lv.min:2));
+  const baseHi=Math.min(10,Math.max(baseLo+1,Math.abs(lv.max!==undefined?lv.max:10)));
+  const bases=[]; for(let b=baseLo;b<=baseHi;b++) bases.push(b);
+  const pick=shuffle(bases.length?bases:[2,3,5,10]);
+  for(let i=0;i<need;i++){
+    const b=pick[i%pick.length];
+    let e=2; while(pw(b,e+1)<=1000) e++;
+    if(e<2) e=2;
+    const val=pw(b,e); if(val>1000) continue;
+    if(lv.type==='power'){
+      const ch=uniq4(String(val),[String(b*e),String(val/b),String(b+e),String(val+b)]);
+      out.push({q:b+'^'+e+' มีค่าเท่ากับข้อใด', choices:ch, answer:ch.indexOf(String(val)), accept:[String(val)],
+        hint:b+'^'+e+' หมายถึงนำ '+b+' มาคูณกัน '+e+' ตัว',
+        why:b+'^'+e+' = '+val+' (ไม่ใช่ '+b+' × '+e+' = '+(b*e)+')'});
+    }else if(lv.type==='prop'){
+      const m=2,n=2;
+      const ok=b+'^'+(m*n);
+      const ch=uniq4(ok,[b+'^'+(m+n),b+'^'+(m*n+1),(b*b)+'^'+(m*n)]);
+      out.push({q:'('+b+'^'+m+')^'+n+' มีค่าเท่ากับข้อใด', choices:ch, answer:ch.indexOf(ok), accept:[ok],
+        hint:'ใช้สมบัติกำลังของกำลัง (a^m)^n = a^(m×n)',
+        why:'('+b+'^'+m+')^'+n+' = '+b+'^('+m+'×'+n+') = '+ok+' = '+pw(b,m*n)});
+    }else if(lv.type==='muldiv'){
+      const m=Math.max(1,e-1), n=1;
+      const ok=b+'^'+(m+n);
+      const ch=uniq4(ok,[b+'^'+(m*n),b+'^'+(m-n),(b*b)+'^'+(m+n)]);
+      out.push({q:b+'^'+m+' × '+b+'^'+n+' มีค่าเท่ากับข้อใด', choices:ch, answer:ch.indexOf(ok), accept:[ok,String(pw(b,m+n))],
+        hint:'ฐานเดียวกันคูณกัน ให้บวกเลขชี้กำลัง',
+        why:b+'^'+m+' × '+b+'^'+n+' = '+b+'^('+m+'+'+n+') = '+ok+' = '+pw(b,m+n)});
+    }else{
+      const m=Math.max(2,e-1), n=1;
+      const sum=pw(b,m)+pw(b,n);
+      const ch=uniq4(String(sum),[b+'^'+(m+n),String(pw(b,m)),String(pw(b,m)*pw(b,n))]);
+      out.push({q:b+'^'+m+' + '+b+'^'+n+' มีค่าเท่ากับข้อใด', choices:ch, answer:ch.indexOf(String(sum)), accept:[String(sum)],
+        hint:'การบวกไม่มีสมบัติของเลขยกกำลัง ต้องหาค่าของแต่ละพจน์ก่อน',
+        why:b+'^'+m+' = '+pw(b,m)+' และ '+b+'^'+n+' = '+pw(b,n)+' ดังนั้นผลบวกเท่ากับ '+sum});
+    }
+  }
+  return out;
+}
+
+/* =========================================================================
+   ██ ส่วนที่ 5 : ประกอบชุดข้อสอบ
+   ========================================================================= */
+function buildQueue(modeKey){
+  const T=TESTS[modeKey]; const queue=[];
+  LV_KEYS.forEach(function(key, li){
+    const lv=T[key]; if(!lv) return;
+    const need=(lv.number!==undefined ? lv.number : (lv.questionCount||5));
+    let pool=(lv.items||[]).slice();
+    if(CONFIG.shuffleQuestions) pool=shuffle(pool);
+    if(pool.length<need) pool=pool.concat(autoGen(lv, need-pool.length));
+    pool.slice(0,need).forEach(function(it){
+      let choices=it.choices.slice(), answer=it.answer;
+      if(CONFIG.shuffleChoices){
+        const correctText=choices[answer];
+        choices=shuffle(choices); answer=choices.indexOf(correctText);
+      }
+      queue.push({
+        story: it.story||'', q: it.q, choices: choices, answer: answer,
+        hint: it.hint||'ลองย้อนกลับไปทบทวนบทนิยามและสมบัติของเลขยกกำลังในหน้าแรก',
+        why: it.why||'', accept: it.accept||null,
+        levelIndex: li, levelTitle: lv.title, levelColor: lv.color||'#2563eb'
+      });
+    });
+  });
+  return queue;
+}
+function levelMeta(modeKey){
+  const T=TESTS[modeKey];
+  return LV_KEYS.map(function(k,i){ const lv=T[k]; return {i:i,title:lv.title,color:lv.color||'#2563eb',n:(lv.number!==undefined?lv.number:0)}; });
+}
+
+/* =========================================================================
+   ██ ส่วนที่ 6 : ตัวเกม
+   ========================================================================= */
+const state={ mode:'pre', student:{name:'',no:'',room:''}, typeMode:false,
+  queue:[], idx:0, hearts:CONFIG.hearts, correct:0, points:0, hintsUsed:0, refills:0,
+  answers:[], locked:false, startAt:0 };
+
+function show(id){
+  document.querySelectorAll('.screen').forEach(function(s){ s.classList.remove('active'); });
+  document.getElementById(id).classList.add('active');
+  document.getElementById('hero').style.display=(id==='scr-home')?'':'none';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function goSetup(mode){
+  state.mode=mode;
+  document.getElementById('setupTitle').textContent='ลงทะเบียน · '+TESTS[mode].label;
+  show('scr-setup');
+}
+function startGame(){
+  const nm=document.getElementById('inName').value.trim();
+  if(!nm){ alert('กรุณากรอกชื่อ – นามสกุลก่อนเริ่มทำแบบทดสอบ'); return; }
+  state.student={ name:nm, no:document.getElementById('inNo').value.trim()||'-', room:document.getElementById('inRoom').value.trim()||'-' };
+  state.typeMode=document.getElementById('inType').checked;
+  state.queue=buildQueue(state.mode);
+  state.idx=0; state.hearts=CONFIG.hearts; state.correct=0; state.points=0;
+  state.hintsUsed=0; state.refills=0; state.answers=[]; state.locked=false; state.startAt=Date.now();
+  show('scr-game'); renderQuestion();
+}
+function renderHUD(){
+  const q=state.queue[state.idx];
+  document.getElementById('hudLevel').textContent='ด่าน '+(q.levelIndex+1);
+  let h=''; for(let i=0;i<Math.max(CONFIG.hearts,state.hearts);i++) h+='<span class="heart'+(i<state.hearts?'':' off')+'">\u2764\uFE0F</span>';
+  document.getElementById('hudHearts').innerHTML=h;
+  document.getElementById('hudScore').textContent='ถูก '+state.correct+' ข้อ · '+state.points+' แต้ม';
+  document.getElementById('hudProgress').textContent='ข้อ '+(state.idx+1)+' / '+state.queue.length;
+  document.getElementById('hudBar').style.width=((state.idx)/state.queue.length*100)+'%';
+}
+function renderQuestion(){
+  const q=state.queue[state.idx]; state.locked=false; renderHUD();
+  document.getElementById('qLevelTag').innerHTML='<span class="lvtag" style="background:linear-gradient(180deg,'+q.levelColor+'cc,'+q.levelColor+')">ด่าน '+(q.levelIndex+1)+' · '+esc(q.levelTitle)+'</span>';
+  document.getElementById('qStory').innerHTML=q.story?'<div class="story"><b>สถานการณ์ :</b> '+M(q.story)+'</div>':'';
+  document.getElementById('qText').innerHTML='<span style="color:'+q.levelColor+'">'+(state.idx+1)+'.</span> '+M(q.q);
+  const useTyped=state.typeMode && q.accept && q.accept.length;
+  const box=document.getElementById('qChoices'); const typed=document.getElementById('qTyped');
+  if(useTyped){
+    box.innerHTML=''; typed.style.display='block';
+    const ti=document.getElementById('typedInput'); ti.value=''; ti.disabled=false;
+    document.getElementById('typedBtn').disabled=false;
+    ti.onkeydown=function(e){ if(e.key==='Enter') submitTyped(); };
+    setTimeout(function(){ ti.focus(); },120);
+  }else{
+    typed.style.display='none'; box.innerHTML='';
+    q.choices.forEach(function(c,i){
+      const b=document.createElement('button');
+      b.className='ch'; b.innerHTML='<span class="k">'+KEY_LABEL[i]+'</span><span>'+M(c)+'</span>';
+      b.onclick=function(){ answer(i); };
+      box.appendChild(b);
+    });
+  }
+  document.getElementById('qHint').className='hintbox';
+  document.getElementById('qHint').innerHTML='';
+  document.getElementById('qFb').className='fb';
+  document.getElementById('qFb').innerHTML='';
+  document.getElementById('btnNext').style.display='none';
+  document.getElementById('btnHint').disabled=false;
+}
+function useHint(){
+  if(state.locked) return;
+  const q=state.queue[state.idx]; const h=document.getElementById('qHint');
+  h.innerHTML='<b>💡 คำใบ้ :</b> '+M(q.hint); h.className='hintbox show';
+  document.getElementById('btnHint').disabled=true;
+  state.hintsUsed++; state.points=Math.max(0,state.points-20);
+  renderHUD();
+}
+function gcd(a,b){ a=Math.abs(a); b=Math.abs(b); while(b){ const t=b; b=a%b; a=t; } return a||1; }
+function normAns(v){
+  let s=String(v).trim().toLowerCase();
+  s=s.replace(/[\u2212\u2013\u2014]/g,'-').replace(/\[\[|\]\]/g,'').replace(/\s+/g,'').replace(/,/g,'').replace(/^\+/,'');
+  s=s.replace(/\^\(([^)]*)\)/g,'^$1');          /* 2^(-2) → 2^-2 */
+  s=s.replace(/\*\*/g,'^');                      /* 2**5 → 2^5 */
+  const m=s.match(/^(-?)(\d+)\/(\d+)$/);
+  if(m){ const sg=m[1]==='-'?-1:1; let n=parseInt(m[2],10), d=parseInt(m[3],10);
+    if(d!==0){ const g=gcd(n,d); n/=g; d/=g; return (sg<0?'-':'')+n+(d===1?'':'/'+d); } }
+  if(/^-?\.\d+$/.test(s)) s=s.replace('.','0.');
+  if(/^-?\d*\.\d+$/.test(s)) s=String(parseFloat(s));
+  return s;
+}
+function submitTyped(){
+  if(state.locked) return;
+  const q=state.queue[state.idx];
+  const val=document.getElementById('typedInput').value;
+  if(val.trim()===''){ alert('กรุณาพิมพ์คำตอบก่อนกดส่ง'); return; }
+  const accepts=(q.accept||[]).concat([q.choices[q.answer]]).map(normAns);
+  const ok=accepts.indexOf(normAns(val))>=0;
+  document.getElementById('typedInput').disabled=true;
+  document.getElementById('typedBtn').disabled=true;
+  grade(ok, val, q);
+}
+function answer(i){
+  if(state.locked) return;
+  const q=state.queue[state.idx];
+  const btns=document.querySelectorAll('#qChoices .ch');
+  btns.forEach(function(b,bi){ b.disabled=true; if(bi===q.answer) b.classList.add('correct'); });
+  if(i!==q.answer) btns[i].classList.add('wrong');
+  grade(i===q.answer, q.choices[i], q);
+}
+function grade(ok, given, q){
+  state.locked=true;
+  state.answers.push({ levelIndex:q.levelIndex, levelTitle:q.levelTitle, q:q.q, story:q.story,
+    given:String(given), correctText:q.choices[q.answer], ok:ok, why:q.why });
+  const fb=document.getElementById('qFb');
+  if(ok){
+    state.correct++; state.points+=100;
+    fb.className='fb ok show';
+    fb.innerHTML='<b>✅ ถูกต้อง เก่งมาก!</b>'+M(q.why);
+  }else{
+    state.hearts--;
+    fb.className='fb no show';
+    fb.innerHTML='<b>❌ ยังไม่ถูก เสียหัวใจ 1 ดวง</b><div>คำตอบที่ถูกต้องคือ <b>'+M(q.choices[q.answer])+'</b></div><div style="margin-top:6px">'+M(q.why)+'</div>';
+  }
+  document.getElementById('btnHint').disabled=true;
+  document.getElementById('btnNext').style.display='inline-flex';
+  document.getElementById('btnNext').textContent=(state.idx===state.queue.length-1)?'ดูผลคะแนน →':'ข้อต่อไป →';
+  renderHUD();
+}
+function nextQuestion(){
+  if(state.hearts<=0 && CONFIG.allowRefill){ show('scr-over'); return; }
+  const cur=state.queue[state.idx];
+  const nxt=state.queue[state.idx+1];
+  if(!nxt){ finishTest(); return; }
+  if(nxt.levelIndex!==cur.levelIndex){
+    const done=state.answers.filter(function(a){return a.levelIndex===cur.levelIndex;});
+    const c=done.filter(function(a){return a.ok;}).length;
+    document.getElementById('luTitle').textContent='ผ่านด่าน '+(cur.levelIndex+1)+' แล้ว!';
+    document.getElementById('luDetail').innerHTML='ด่าน '+(cur.levelIndex+1)+' : '+esc(cur.levelTitle)+'<br>ทำถูก <b>'+c+' / '+done.length+'</b> ข้อ · หัวใจคงเหลือ <b>'+state.hearts+'</b> ดวง<br>ด่านต่อไปคือ <b>'+esc(nxt.levelTitle)+'</b>';
+    show('scr-levelup'); return;
+  }
+  state.idx++; renderQuestion();
+}
+function continueNext(){ state.idx++; show('scr-game'); renderQuestion(); }
+function refillHearts(){ state.hearts=CONFIG.refillAmount; state.refills++; state.idx++;
+  if(state.idx>=state.queue.length){ finishTest(); return; }
+  show('scr-game'); renderQuestion(); }
+function quitConfirm(){ if(confirm('ต้องการออกจากแบบทดสอบและดูผลคะแนนเท่าที่ทำไปแล้วหรือไม่')) finishTest(); }
+
+/* =========================================================================
+   ██ ส่วนที่ 7 : สรุปผลรายบุคคล + บันทึกลงเครื่อง
+   ========================================================================= */
+const STORE='exponent_records_v1';
+function loadRecs(){ try{ return JSON.parse(localStorage.getItem(STORE)||'[]'); }catch(e){ return []; } }
+function saveRecs(r){ try{ localStorage.setItem(STORE, JSON.stringify(r)); }catch(e){} }
+
+function finishTest(){
+  const total=state.queue.length;
+  const sec=Math.round((Date.now()-state.startAt)/1000);
+  const meta=levelMeta(state.mode);
+  const byLevel=meta.map(function(m){
+    const list=state.answers.filter(function(a){return a.levelIndex===m.i;});
+    return {title:m.title,color:m.color,got:list.filter(function(a){return a.ok;}).length,full:m.n,done:list.length};
+  });
+  const pct=total?Math.round(state.correct/total*100):0;
+  const rec={ id:Date.now()+'-'+Math.random().toString(36).slice(2,7),
+    name:state.student.name, no:state.student.no, room:state.student.room,
+    mode:state.mode, modeLabel:TESTS[state.mode].label, typeMode:state.typeMode,
+    score:state.correct, total:total, percent:pct, points:state.points,
+    hearts:state.hearts, hints:state.hintsUsed, refills:state.refills, seconds:sec,
+    date:new Date().toLocaleString('th-TH'),
+    byLevel:byLevel.map(function(b){return {title:b.title,got:b.got,full:b.full};}),
+    details:state.answers.map(function(a,i){return {n:i+1,level:a.levelIndex+1,q:a.q,given:a.given,correct:a.correctText,ok:a.ok};})
+  };
+  const all=loadRecs(); all.push(rec); saveRecs(all);
+  renderResult(rec, byLevel);
+  show('scr-result');
+}
+function ringColor(p){ if(p>=80) return ['#4ade80','#16a34a']; if(p>=CONFIG.passPercent) return ['#60a5fa','#2563eb']; if(p>=40) return ['#fcd34d','#f59e0b']; return ['#fb7185','#e11d48']; }
+function grade5(p){ if(p>=80)return 'ดีมาก'; if(p>=70)return 'ดี'; if(p>=CONFIG.passPercent)return 'พอใช้'; if(p>=40)return 'ควรปรับปรุง'; return 'ต้องปรับปรุงเร่งด่วน'; }
+function advise(t,p){
+  if(p>=80) return 'มีความเข้าใจมั่นคง ควรต่อยอดด้วยโจทย์ประยุกต์และสัญกรณ์วิทยาศาสตร์';
+  if(p>=CONFIG.passPercent) return 'เข้าใจหลักการแล้ว ควรฝึกความแม่นยำในการใช้สมบัติและการคำนวณ';
+  return 'ควรทบทวน "'+t+'" ซ้ำ โดยเน้นทำความเข้าใจบทนิยามและฝึกจากตัวอย่างพื้นฐาน';
+}
+function renderResult(rec, byLevel){
+  const cols=ringColor(rec.percent);
+  let rows='';
+  byLevel.forEach(function(b,i){
+    const p=b.full?Math.round(b.got/b.full*100):0;
+    rows+='<tr><td>'+(i+1)+'</td><td class="l">'+esc(b.title)+'</td><td>'+b.got+' / '+b.full+'</td><td>'+p+'%</td><td class="l" style="font-size:14px">'+esc(advise(b.title,p))+'</td></tr>';
+  });
+  let det='';
+  rec.details.forEach(function(d){
+    det+='<tr><td>'+d.n+'</td><td>'+d.level+'</td><td class="l">'+M(d.q)+'</td><td>'+M(d.given)+'</td><td>'+M(d.correct)+'</td><td class="'+(d.ok?'ok-t':'no-t')+'">'+(d.ok?'ถูก':'ผิด')+'</td></tr>';
+  });
+  document.getElementById('resultCard').innerHTML=
+    '<div class="center"><h2 style="color:#1e3a8a">แบบรายงานผลการทดสอบรายบุคคล</h2>'+
+    '<p class="note">'+esc(CONFIG.schoolName)+' · '+esc(CONFIG.subject)+'<br>'+esc(CONFIG.unitName)+'</p></div>'+
+    '<div class="tw mt"><table><tr><th>ชื่อ – นามสกุล</th><th>เลขที่</th><th>ชั้น/ห้อง</th><th>ชุดทดสอบ</th><th>วันที่ทำ</th></tr>'+
+    '<tr><td class="l">'+esc(rec.name)+'</td><td>'+esc(rec.no)+'</td><td>'+esc(rec.room)+'</td><td>'+esc(rec.modeLabel)+(rec.typeMode?' (พิมพ์คำตอบเอง)':'')+'</td><td>'+esc(rec.date)+'</td></tr></table></div>'+
+    '<div class="center mt"><div class="score-ring" style="background:radial-gradient(circle at 34% 28%,'+cols[0]+','+cols[1]+')">'+
+      '<div><div class="v">'+rec.score+'/'+rec.total+'</div><div class="s">คิดเป็นร้อยละ '+rec.percent+'</div></div></div>'+
+      '<h3 class="mt" style="color:'+cols[1]+'">ระดับคุณภาพ : '+grade5(rec.percent)+' · '+(rec.percent>=CONFIG.passPercent?'ผ่านเกณฑ์':'ยังไม่ผ่านเกณฑ์')+' (เกณฑ์ร้อยละ '+CONFIG.passPercent+')</h3></div>'+
+    '<div class="grid3 mt"><div class="kpi"><b>'+rec.points+'</b><span>แต้มสะสม</span></div>'+
+      '<div class="kpi"><b>'+Math.floor(rec.seconds/60)+':'+String(rec.seconds%60).padStart(2,'0')+'</b><span>เวลาที่ใช้ (นาที:วินาที)</span></div>'+
+      '<div class="kpi"><b>'+rec.hints+'</b><span>ครั้งที่ขอคำใบ้</span></div></div>'+
+    '<h3 class="mt" style="color:#1e3a8a">ผลการทดสอบจำแนกตามสาระย่อย</h3>'+
+    '<div class="tw"><table><tr><th>ด่าน</th><th>สาระย่อย</th><th>คะแนน</th><th>ร้อยละ</th><th>ข้อเสนอแนะ</th></tr>'+rows+'</table></div>'+
+    '<h3 class="mt" style="color:#1e3a8a">ผลการตอบรายข้อ</h3>'+
+    '<div class="tw"><table><tr><th>ข้อ</th><th>ด่าน</th><th>คำถาม</th><th>คำตอบของนักเรียน</th><th>คำตอบที่ถูกต้อง</th><th>ผล</th></tr>'+det+'</table></div>'+
+    '<div class="mt note">ลงชื่อ ....................................................... ครูผู้สอน &nbsp;&nbsp;&nbsp; ลงชื่อ ....................................................... ผู้ปกครอง</div>';
+}
+
+/* =========================================================================
+   ██ ส่วนที่ 8 : ห้องครู
+   ========================================================================= */
+function openTeacher(){ document.getElementById('pinCard').style.display='block';
+  document.getElementById('teacherBody').style.display='none';
+  document.getElementById('pinInput').value=''; show('scr-teacher'); }
+function checkPin(){
+  if(document.getElementById('pinInput').value.trim()===CONFIG.teacherPin){
+    document.getElementById('pinCard').style.display='none';
+    document.getElementById('teacherBody').style.display='block';
+    renderTeacher();
+  } else alert('รหัสผ่านไม่ถูกต้อง');
+}
+function renderTeacher(){
+  const recs=loadRecs();
+  const groups={};
+  recs.forEach(function(r){
+    const k=(r.room||'-')+'|'+(r.no||'-')+'|'+r.name;
+    if(!groups[k]) groups[k]={name:r.name,no:r.no,room:r.room,pre:null,post:null};
+    if(r.mode==='pre'&&(!groups[k].pre||r.percent>groups[k].pre.percent)) groups[k].pre=r;
+    if(r.mode==='post'&&(!groups[k].post||r.percent>groups[k].post.percent)) groups[k].post=r;
+  });
+  const list=Object.keys(groups).map(function(k){return groups[k];})
+    .sort(function(a,b){ return (a.room+a.no).localeCompare(b.room+b.no,'th',{numeric:true}); });
+
+  let rows='',sumPre=0,cPre=0,sumPost=0,cPost=0;
+  list.forEach(function(g,i){
+    const pre=g.pre?g.pre.score:null, post=g.post?g.post.score:null;
+    const full=g.pre?g.pre.total:(g.post?g.post.total:25);
+    if(pre!==null){sumPre+=pre;cPre++;} if(post!==null){sumPost+=post;cPost++;}
+    let gain='-', ng='-';
+    if(pre!==null&&post!==null){ gain=(post-pre>0?'+':'')+(post-pre);
+      ng=(full-pre)>0?((post-pre)/(full-pre)).toFixed(2):'1.00'; }
+    rows+='<tr><td>'+(i+1)+'</td><td class="l">'+esc(g.name)+'</td><td>'+esc(g.no)+'</td><td>'+esc(g.room)+'</td>'+
+      '<td>'+(pre!==null?pre+'/'+full:'-')+'</td><td>'+(post!==null?post+'/'+full:'-')+'</td>'+
+      '<td class="'+(gain!=='-'&&parseInt(gain)>0?'ok-t':'')+'">'+gain+'</td><td>'+ng+'</td>'+
+      '<td>'+(g.post?(g.post.percent>=CONFIG.passPercent?'<span class="ok-t">ผ่าน</span>':'<span class="no-t">ไม่ผ่าน</span>'):'-')+'</td></tr>';
+  });
+  if(!rows) rows='<tr><td colspan="9">ยังไม่มีข้อมูลนักเรียน</td></tr>';
+
+  let att='';
+  recs.slice().reverse().forEach(function(r,i){
+    att+='<tr><td>'+(i+1)+'</td><td class="l">'+esc(r.name)+'</td><td>'+esc(r.no)+'</td><td>'+esc(r.room)+'</td>'+
+      '<td>'+(r.mode==='pre'?'ก่อนเรียน':'หลังเรียน')+'</td><td>'+r.score+'/'+r.total+'</td><td>'+r.percent+'%</td>'+
+      '<td>'+r.byLevel.map(function(b){return b.got+'/'+b.full;}).join(' · ')+'</td>'+
+      '<td>'+Math.floor(r.seconds/60)+':'+String(r.seconds%60).padStart(2,'0')+'</td><td>'+r.hints+'</td>'+
+      '<td style="font-size:13px">'+esc(r.date)+'</td>'+
+      '<td><button class="btn sm ghost no-print" onclick="viewRec(\''+r.id+'\')">ดู</button></td></tr>';
+  });
+  if(!att) att='<tr><td colspan="12">ยังไม่มีข้อมูล</td></tr>';
+
+  const avgPre=cPre?(sumPre/cPre).toFixed(2):'-', avgPost=cPost?(sumPost/cPost).toFixed(2):'-';
+
+  document.getElementById('teacherBody').innerHTML=
+    '<div class="card"><h2 style="color:#5b21b6">👩‍🏫 สรุปคะแนนรายบุคคล · เปรียบเทียบก่อนเรียน–หลังเรียน</h2>'+
+    '<p class="note">'+esc(CONFIG.schoolName)+' · '+esc(CONFIG.subject)+'<br>'+esc(CONFIG.unitName)+'</p>'+
+    '<div class="grid3 mt"><div class="kpi"><b>'+list.length+'</b><span>จำนวนนักเรียน (คน)</span></div>'+
+      '<div class="kpi"><b>'+avgPre+'</b><span>ค่าเฉลี่ยก่อนเรียน</span></div>'+
+      '<div class="kpi"><b>'+avgPost+'</b><span>ค่าเฉลี่ยหลังเรียน</span></div></div>'+
+    '<div class="tw mt"><table><tr><th>ที่</th><th>ชื่อ – นามสกุล</th><th>เลขที่</th><th>ห้อง</th><th>ก่อนเรียน</th><th>หลังเรียน</th><th>ผลต่าง</th><th>Gain<br>ปกติ</th><th>สรุป</th></tr>'+rows+'</table></div>'+
+    '<p class="note mt"><b>Normalized Gain (g)</b> = (คะแนนหลังเรียน − คะแนนก่อนเรียน) / (คะแนนเต็ม − คะแนนก่อนเรียน) · ตีความตามเกณฑ์ของ Hake : g ≥ 0.70 สูง, 0.30 ≤ g &lt; 0.70 ปานกลาง, g &lt; 0.30 ต่ำ</p>'+
+    '<div class="row mt no-print"><button class="btn green" onclick="exportCSV()">⬇ ส่งออกเป็นไฟล์ CSV</button>'+
+      '<button class="btn amber" onclick="window.print()">🖨 พิมพ์ / บันทึก PDF</button>'+
+      '<button class="btn rose" onclick="clearAll()">🗑 ล้างข้อมูลทั้งหมด</button>'+
+      '<button class="btn ghost" onclick="show(\'scr-home\')">🏠 หน้าแรก</button></div></div>'+
+    '<div class="card"><h3 style="color:#5b21b6">บันทึกการทำแบบทดสอบทุกครั้ง</h3>'+
+    '<div class="tw"><table><tr><th>ที่</th><th>ชื่อ</th><th>เลขที่</th><th>ห้อง</th><th>ชุด</th><th>คะแนน</th><th>ร้อยละ</th><th>คะแนนรายด่าน (1·2·3·4)</th><th>เวลา</th><th>คำใบ้</th><th>วันที่</th><th>รายข้อ</th></tr>'+att+'</table></div></div>'+
+    '<div class="card" id="recView" style="display:none"></div>';
+}
+function viewRec(id){
+  const r=loadRecs().filter(function(x){return x.id===id;})[0]; if(!r) return;
+  let det='';
+  r.details.forEach(function(d){ det+='<tr><td>'+d.n+'</td><td>'+d.level+'</td><td class="l">'+M(d.q)+'</td><td>'+M(d.given)+'</td><td>'+M(d.correct)+'</td><td class="'+(d.ok?'ok-t':'no-t')+'">'+(d.ok?'ถูก':'ผิด')+'</td></tr>'; });
+  const v=document.getElementById('recView'); v.style.display='block';
+  v.innerHTML='<h3 style="color:#1e3a8a">รายละเอียดรายข้อ · '+esc(r.name)+' ('+esc(r.modeLabel)+')</h3>'+
+    '<p class="note">คะแนน '+r.score+'/'+r.total+' ('+r.percent+'%) · เลขที่ '+esc(r.no)+' ห้อง '+esc(r.room)+' · '+esc(r.date)+'</p>'+
+    '<div class="tw"><table><tr><th>ข้อ</th><th>ด่าน</th><th>คำถาม</th><th>ตอบ</th><th>เฉลย</th><th>ผล</th></tr>'+det+'</table></div>';
+  v.scrollIntoView({behavior:'smooth'});
+}
+function exportCSV(){
+  const recs=loadRecs();
+  if(!recs.length){ alert('ยังไม่มีข้อมูลให้ส่งออก'); return; }
+  let csv='\uFEFFชื่อ-นามสกุล,เลขที่,ห้อง,ชุดทดสอบ,คะแนน,คะแนนเต็ม,ร้อยละ,ด่าน1,ด่าน2,ด่าน3,ด่าน4,เวลา(วินาที),คำใบ้,เติมหัวใจ,โหมดพิมพ์คำตอบ,วันที่\n';
+  recs.forEach(function(r){
+    const b=r.byLevel.map(function(x){return x.got+'/'+x.full;});
+    csv+=['"'+r.name+'"','"'+r.no+'"','"'+r.room+'"','"'+(r.mode==='pre'?'ก่อนเรียน':'หลังเรียน')+'"',
+      r.score,r.total,r.percent,'"'+(b[0]||'')+'"','"'+(b[1]||'')+'"','"'+(b[2]||'')+'"','"'+(b[3]||'')+'"',
+      r.seconds,r.hints,r.refills,'"'+(r.typeMode?'ใช้':'ไม่ใช้')+'"','"'+r.date+'"'].join(',')+'\n';
+  });
+  const blob=new Blob([csv],{type:'text/csv;charset=utf-8;'});
+  const a=document.createElement('a'); a.href=URL.createObjectURL(blob);
+  a.download='คะแนนเลขยกกำลัง.csv'; a.click(); URL.revokeObjectURL(a.href);
+}
+function clearAll(){ if(confirm('ยืนยันการลบข้อมูลคะแนนทั้งหมดในเครื่องนี้ (ไม่สามารถกู้คืนได้)')){ saveRecs([]); renderTeacher(); } }
+
+/* =========================================================================
+   ██ ส่วนที่ 9 : ใบงาน PDF
+   ========================================================================= */
+function openSheet(){ show('scr-print'); buildSheet(); }
+function sheetBlock(modeKey, showKey){
+  const T=TESTS[modeKey]; const qs=buildQueue(modeKey);
+  let h='<div class="ws-head"><h2>'+esc(CONFIG.unitName)+'</h2>'+
+    '<div style="font-size:15px">'+esc(T.label)+' · '+esc(T.code)+' · จำนวน '+qs.length+' ข้อ · '+esc(CONFIG.timeLimitNote)+'</div>'+
+    '<div style="font-size:14px">'+esc(CONFIG.subject)+' · '+esc(CONFIG.schoolName)+'</div></div>'+
+    '<div class="ws-meta"><span>ชื่อ – นามสกุล ..............................................................</span><span>เลขที่ ............</span><span>ชั้น ................</span><span>คะแนนที่ได้ ......... / '+qs.length+'</span></div>'+
+    '<div style="font-size:14px;margin-bottom:10px"><b>คำชี้แจง</b> ให้นักเรียนเลือกคำตอบที่ถูกต้องที่สุดเพียงคำตอบเดียว แล้วทำเครื่องหมาย \u2715 ลงในกระดาษคำตอบ (ค่าของเลขยกกำลังทุกข้อไม่เกิน 1000)</div>';
+  let lastLv=-1;
+  qs.forEach(function(q,i){
+    if(q.levelIndex!==lastLv){ lastLv=q.levelIndex;
+      h+='<div style="margin:14px 0 8px;font-weight:700;border-left:6px solid #333;padding-left:8px">ตอนที่ '+(q.levelIndex+1)+' : '+esc(q.levelTitle)+'</div>'; }
+    h+='<div class="wq"><span class="num">'+(i+1)+'.</span> '+M(q.q);
+    if(q.story) h+='<div class="wstory">'+M(q.story)+'</div>';
+    h+='<div class="wopt">';
+    q.choices.forEach(function(c,ci){ h+='<div>'+KEY_LABEL[ci]+'. '+M(c)+'</div>'; });
+    h+='</div></div>';
+  });
+  if(showKey==='yes'){
+    h+='<div class="pagebreak"></div><h3 style="margin:8px 0">เฉลยและแนวคิด · '+esc(T.label)+'</h3>'+
+      '<div class="tw"><table class="keytbl"><tr><th style="width:44px">ข้อ</th><th style="width:86px">เฉลย</th><th>แนวคิด / เหตุผลประกอบ</th></tr>';
+    qs.forEach(function(q,i){ h+='<tr><td>'+(i+1)+'</td><td><b>'+KEY_LABEL[q.answer]+'</b> ('+M(q.choices[q.answer])+')</td><td class="l">'+M(q.why)+'</td></tr>'; });
+    h+='</table></div>';
+  }
+  return h;
+}
+function answerCard(n,label){
+  let h='<div class="pagebreak"></div><div class="ws-head"><h2>กระดาษคำตอบ · '+esc(label)+'</h2></div>'+
+    '<div class="ws-meta"><span>ชื่อ – นามสกุล ..............................................................</span><span>เลขที่ ............</span><span>ชั้น ................</span></div><div class="tw"><table>';
+  h+='<tr><th>ข้อ</th><th>ก</th><th>ข</th><th>ค</th><th>ง</th><th>ข้อ</th><th>ก</th><th>ข</th><th>ค</th><th>ง</th></tr>';
+  const half=Math.ceil(n/2);
+  for(let i=0;i<half;i++){
+    const j=i+half;
+    h+='<tr><td><b>'+(i+1)+'</b></td><td>◯</td><td>◯</td><td>◯</td><td>◯</td>';
+    h+= j<n ? '<td><b>'+(j+1)+'</b></td><td>◯</td><td>◯</td><td>◯</td><td>◯</td></tr>' : '<td></td><td></td><td></td><td></td><td></td></tr>';
+  }
+  return h+'</table></div>';
+}
+function buildSheet(){
+  const set=document.getElementById('wsSet').value;
+  const key=document.getElementById('wsKey').value;
+  const card=document.getElementById('wsCard').value;
+  let h='';
+  if(set==='pre'||set==='both'){ h+=sheetBlock('pre',key); if(card==='yes') h+=answerCard(buildQueue('pre').length,'แบบทดสอบก่อนเรียน (ชุด A)'); }
+  if(set==='both') h+='<div class="pagebreak"></div>';
+  if(set==='post'||set==='both'){ h+=sheetBlock('post',key); if(card==='yes') h+=answerCard(buildQueue('post').length,'แบบทดสอบหลังเรียน (ชุด B)'); }
+  document.getElementById('sheet').innerHTML=h;
+}
+
+/* ตรวจสอบจำนวนข้อรวมตอนเปิดหน้า */
+(function(){
+  ['pre','post'].forEach(function(m){
+    const n=buildQueue(m).length;
+    if(n!==25) console.warn('ชุด '+m+' มี '+n+' ข้อ (ปรับค่า number ในแต่ละ levelXData ให้รวมกันได้ 25)');
+  });
+})();
+</script>
+</body>
+</html>
